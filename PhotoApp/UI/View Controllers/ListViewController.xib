@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="PhotoApp" customModuleProvider="target">
             <connections>
+                <outlet property="activityView" destination="yWd-OM-fQ3" id="7KD-ci-DGl"/>
                 <outlet property="collectionView" destination="ffH-Mn-RvY" id="Jks-ad-Dfv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,12 +35,17 @@
                         <outlet property="delegate" destination="-1" id="moD-64-ZXM"/>
                     </connections>
                 </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="yWd-OM-fQ3">
+                    <rect key="frame" x="169" y="325" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ffH-Mn-RvY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3eg-6c-GiD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ffH-Mn-RvY" secondAttribute="trailing" id="41e-C3-FrF"/>
+                <constraint firstItem="yWd-OM-fQ3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4DD-6c-SV6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ffH-Mn-RvY" secondAttribute="bottom" id="9w5-hh-2Aw"/>
+                <constraint firstItem="yWd-OM-fQ3" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NVs-Od-UNR"/>
                 <constraint firstItem="ffH-Mn-RvY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gRH-fL-uKr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

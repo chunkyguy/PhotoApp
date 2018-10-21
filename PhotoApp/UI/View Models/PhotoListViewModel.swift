@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct PhotoListViewModel {
-
+class PhotoListViewModel {
+    private var photoList: [Photo] = []
 }
 
 extension PhotoListViewModel: ListViewModelType {
@@ -18,8 +18,20 @@ extension PhotoListViewModel: ListViewModelType {
     }
 
     var items: [ListItemViewModelType] {
-        return [PhotoViewModel()]
+        return photoList.map(PhotoViewModel.init)
     }
 
-    func loadPhotoList(completion: @escaping (Bool) -> Void) {}
+    func loadPhotoList(completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            NetworkService.getPhotoList { [weak self] photoList in
+                guard let photoList = photoList else {
+                    DispatchQueue.main.async { completion(false) }
+                    return
+                }
+                self?.photoList = photoList
+                DispatchQueue.main.async { completion(true) }
+            }
+        }
+    }
+
 }

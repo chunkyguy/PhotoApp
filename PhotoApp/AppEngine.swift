@@ -16,8 +16,7 @@ class AppEngine {
     }
 
     func start(window: UIWindow) {
-        let listViewModel = PhotoListViewModel()
-        let listViewController = ListViewController(viewModel: listViewModel)
+        let listViewController = ListViewController(viewModel: PhotoListViewModel())
         let rootViewController = UINavigationController(rootViewController: listViewController)
         decorate(navBar: rootViewController.navigationBar)
         window.rootViewController = rootViewController

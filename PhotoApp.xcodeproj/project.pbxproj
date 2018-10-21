@@ -30,6 +30,8 @@
 		1F76255A217CB6DC00CABDBC /* photo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F762559217CB6DC00CABDBC /* photo.json */; };
 		1F76255C217CB70100CABDBC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76255B217CB70100CABDBC /* Photo.swift */; };
 		1F76255F217CB77F00CABDBC /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76255E217CB77F00CABDBC /* ModelTests.swift */; };
+		1F762563217CBF5D00CABDBC /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F762562217CBF5D00CABDBC /* ImageLoader.swift */; };
+		1F762565217CC0CA00CABDBC /* PhotoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F762564217CC0CA00CABDBC /* PhotoDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		1F762559217CB6DC00CABDBC /* photo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = photo.json; sourceTree = "<group>"; };
 		1F76255B217CB70100CABDBC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		1F76255E217CB77F00CABDBC /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		1F762562217CBF5D00CABDBC /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		1F762564217CC0CA00CABDBC /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 			children = (
 				1F481A66217CAA3D00928D2A /* PhotoListViewModel.swift */,
 				1F481A74217CB39D00928D2A /* PhotoViewModel.swift */,
+				1F762564217CC0CA00CABDBC /* PhotoDetailViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			children = (
 				1F481A64217CA93400928D2A /* Extensions.swift */,
 				1F481A78217CB5E400928D2A /* NetworkService.swift */,
+				1F762562217CBF5D00CABDBC /* ImageLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				1F481A79217CB5E400928D2A /* NetworkService.swift in Sources */,
 				1F481A65217CA93400928D2A /* Extensions.swift in Sources */,
 				1F481A2B217CA2FC00928D2A /* AppDelegate.swift in Sources */,
+				1F762565217CC0CA00CABDBC /* PhotoDetailViewModel.swift in Sources */,
 				1F481A6A217CAE6900928D2A /* TitleHeaderView.swift in Sources */,
 				1F481A50217CA61B00928D2A /* AppEngine.swift in Sources */,
 				1F481A59217CA6EC00928D2A /* ImageCollectionViewCell.swift in Sources */,
@@ -322,6 +329,7 @@
 				1F481A71217CAFB000928D2A /* TextCollectionViewCell.swift in Sources */,
 				1F481A6E217CAF7A00928D2A /* DetailViewController.swift in Sources */,
 				1F481A75217CB39D00928D2A /* PhotoViewModel.swift in Sources */,
+				1F762563217CBF5D00CABDBC /* ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

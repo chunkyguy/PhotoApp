@@ -9,28 +9,35 @@
 import UIKit
 
 class PhotoViewModel {
-    init() {}
+    private(set) var image: UIImage = ImageLoader.placeholder ?? UIImage.make(with: .gray)
+    private let photo: Photo
+
+    init(photo: Photo) {
+        self.photo = photo
+    }
 }
 
 extension PhotoViewModel: ListItemViewModelType {
+    var itemSize: CGSize {
+        return image.size
+    }
+
     var details: DetailViewModelType {
-        return self
+        return PhotoDetailViewModel(photo: photo, thumb: image)
     }
-
-    var image: UIImage {
-        return UIImage.make(with: .red)
-    }
-
-    func loadImage(completion: @escaping (Bool) -> Void) {}
 }
 
-extension PhotoViewModel: DetailViewModelType {
-    var header: String {
-        return "Details"
-    }
+extension PhotoViewModel: ImageProvider {
+    func loadImage(completion: @escaping (Bool) -> Void) {
+        ImageLoader.loadImage(photo: photo, resolution: .thumb) { [weak self] image in
+            guard let image = image else {
+                completion(false)
+                return
+            }
 
-    var title: String {
-        return "Get this"
+            self?.image = image
+            completion(true)
+        }
     }
 }
 

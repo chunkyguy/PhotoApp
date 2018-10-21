@@ -8,10 +8,14 @@
 
 import UIKit
 
-protocol ListItemViewModelType {
+protocol ImageProvider {
     var image: UIImage { get }
-    var details: DetailViewModelType { get }
     func loadImage(completion: @escaping (Bool) -> Void)
+}
+
+protocol ListItemViewModelType: ImageProvider {
+    var itemSize: CGSize { get }
+    var details: DetailViewModelType { get }
 }
 
 protocol ListViewModelType {
@@ -25,6 +29,7 @@ class ListViewController: UIViewController {
 
     private let viewModel: ListViewModelType
 
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
 
     init(viewModel: ListViewModelType) {
@@ -57,7 +62,11 @@ class ListViewController: UIViewController {
     }
 
     private func loadPhotoList() {
-        collectionView.reloadData()
+        activityView.startAnimating()
+        viewModel.loadPhotoList { [weak self] success in
+            self?.activityView.stopAnimating()
+            self?.collectionView.reloadData()
+        }
     }
 }
 
@@ -77,13 +86,13 @@ extension ListViewController: UICollectionViewDataSource {
             for: indexPath
         )
 
-        guard let posterCell = cell as? ImageCollectionViewCell else {
+        guard let imageCell = cell as? ImageCollectionViewCell else {
             assertionFailure("Unsupported cell type")
             return cell
         }
 
-        posterCell.set(viewModel: viewModel.items[indexPath.item])
-        return posterCell
+        imageCell.set(viewModel: viewModel.items[indexPath.item])
+        return imageCell
     }
 
 
@@ -118,11 +127,10 @@ extension ListViewController: UICollectionViewDataSource {
 extension ListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // some random aspect ratio
-        let aspectSize = CGSize(width: 348, height: 522)
-        let width = collectionView.bounds.width/2.0
-        let height = aspectSize.height * (width/aspectSize.width)
-        return CGSize(width: width, height: height)
+        return SizeUtility.aspectCorrectSize(
+            width: collectionView.bounds.width/2.0,
+            aspectSize: viewModel.items[indexPath.item].itemSize
+        )
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

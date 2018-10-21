@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol DetailViewModelType: ListItemViewModelType {
-    var header: String { get }
+protocol DetailViewModelType: ImageProvider {
     var title: String { get }
 }
 
@@ -41,7 +40,7 @@ class DetailViewController: UIViewController {
             forCellWithReuseIdentifier: TextCollectionViewCell.reuseIdentifier
         )
 
-        title = viewModel.header
+        title = viewModel.title
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -86,20 +85,23 @@ extension DetailViewController: UICollectionViewDataSource {
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.bounds.width
-        let height: CGFloat = {
-            switch indexPath.item {
-            case 0: return 200
-            case 1:
-                return viewModel.title.height(
-                    font: TextCollectionViewCell.font,
-                    width: collectionView.bounds.width - 16.0
-                )
-            default: return 0
-            }
-        }()
+        switch indexPath.item {
+        case 0:
+            return SizeUtility.aspectCorrectSize(
+                width: collectionView.bounds.width,
+                aspectSize: viewModel.image.size
+            )
 
-        return CGSize(width: width, height: height)
+        case 1:
+            let width = collectionView.bounds.width
+            let height = viewModel.title.height(
+                font: TextCollectionViewCell.font,
+                width: width - 16.0
+            )
+            return CGSize(width: width, height: height)
+
+        default: return .zero
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

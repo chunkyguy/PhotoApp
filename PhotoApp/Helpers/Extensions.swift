@@ -51,3 +51,10 @@ extension String {
         return ceil(size(font: font, maxSize: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)).height)
     }
 }
+
+struct SizeUtility {
+    static func aspectCorrectSize(width: CGFloat, aspectSize: CGSize) -> CGSize {
+        let height = aspectSize.height * (width/aspectSize.width)
+        return CGSize(width: width, height: height)
+    }
+}

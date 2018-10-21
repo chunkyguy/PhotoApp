@@ -32,15 +32,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
 
         // TODO: set placeholder image
-        // imageView.image = ...
+         imageView.image = ImageLoader.placeholder
         imageView.contentMode = .scaleAspectFill
     }
 
-    func set(viewModel: ListItemViewModelType) {
+    func set(viewModel: ImageProvider) {
         imageView.image = viewModel.image
         viewModel.loadImage { [weak self] isGood in
             guard isGood else {
                 // TOOD: render error
+
                 return
             }
 

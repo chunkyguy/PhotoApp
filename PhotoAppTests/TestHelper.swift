@@ -26,6 +26,10 @@ struct StubDetailViewModel {
 }
 
 extension StubDetailViewModel: ListItemViewModelType {
+    var itemSize: CGSize {
+        return CGSize(width: 150, height: 150)
+    }
+
     var details: DetailViewModelType {
         return self
     }
