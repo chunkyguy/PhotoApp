@@ -13,6 +13,7 @@
 		1F481A32217CA2FD00928D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F481A31217CA2FD00928D2A /* Assets.xcassets */; };
 		1F481A35217CA2FD00928D2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F481A33217CA2FD00928D2A /* LaunchScreen.storyboard */; };
 		1F481A40217CA2FD00928D2A /* PhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A3F217CA2FD00928D2A /* PhotoAppTests.swift */; };
+		1F481A4E217CA47100928D2A /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F481A4D217CA47100928D2A /* FBSnapshotTestCase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		1F481A3B217CA2FD00928D2A /* PhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F481A3F217CA2FD00928D2A /* PhotoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTests.swift; sourceTree = "<group>"; };
 		1F481A41217CA2FD00928D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F481A4B217CA46500928D2A /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F481A4D217CA47100928D2A /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F481A4E217CA47100928D2A /* FBSnapshotTestCase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +66,7 @@
 				1F481A29217CA2FC00928D2A /* PhotoApp */,
 				1F481A3E217CA2FD00928D2A /* PhotoAppTests */,
 				1F481A28217CA2FC00928D2A /* Products */,
+				1F481A4A217CA46500928D2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +99,15 @@
 				1F481A41217CA2FD00928D2A /* Info.plist */,
 			);
 			path = PhotoAppTests;
+			sourceTree = "<group>";
+		};
+		1F481A4A217CA46500928D2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F481A4D217CA47100928D2A /* FBSnapshotTestCase.framework */,
+				1F481A4B217CA46500928D2A /* FBSnapshotTestCase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
