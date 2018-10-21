@@ -20,6 +20,10 @@
 		1F481A65217CA93400928D2A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A64217CA93400928D2A /* Extensions.swift */; };
 		1F481A67217CAA3D00928D2A /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A66217CAA3D00928D2A /* PhotoListViewModel.swift */; };
 		1F481A6A217CAE6900928D2A /* TitleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A69217CAE6900928D2A /* TitleHeaderView.swift */; };
+		1F481A6E217CAF7A00928D2A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A6C217CAF7A00928D2A /* DetailViewController.swift */; };
+		1F481A6F217CAF7A00928D2A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F481A6D217CAF7A00928D2A /* DetailViewController.xib */; };
+		1F481A71217CAFB000928D2A /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A70217CAFB000928D2A /* TextCollectionViewCell.swift */; };
+		1F481A73217CAFF700928D2A /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A72217CAFF700928D2A /* DetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		1F481A64217CA93400928D2A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1F481A66217CAA3D00928D2A /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		1F481A69217CAE6900928D2A /* TitleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderView.swift; sourceTree = "<group>"; };
+		1F481A6C217CAF7A00928D2A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1F481A6D217CAF7A00928D2A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1F481A70217CAFB000928D2A /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F481A72217CAFF700928D2A /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				1F481A41217CA2FD00928D2A /* Info.plist */,
-				1F481A60217CA8B200928D2A /* ListViewControllerTests.swift */,
 				1F481A62217CA8F300928D2A /* TestHelper.swift */,
+				1F481A60217CA8B200928D2A /* ListViewControllerTests.swift */,
+				1F481A72217CAFF700928D2A /* DetailViewControllerTests.swift */,
 			);
 			path = PhotoAppTests;
 			sourceTree = "<group>";
@@ -139,6 +148,8 @@
 			children = (
 				1F481A51217CA66900928D2A /* ListViewController.swift */,
 				1F481A52217CA66900928D2A /* ListViewController.xib */,
+				1F481A6C217CAF7A00928D2A /* DetailViewController.swift */,
+				1F481A6D217CAF7A00928D2A /* DetailViewController.xib */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 			children = (
 				1F481A57217CA6EC00928D2A /* ImageCollectionViewCell.swift */,
 				1F481A69217CAE6900928D2A /* TitleHeaderView.swift */,
+				1F481A70217CAFB000928D2A /* TextCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +264,7 @@
 				1F481A35217CA2FD00928D2A /* LaunchScreen.storyboard in Resources */,
 				1F481A32217CA2FD00928D2A /* Assets.xcassets in Resources */,
 				1F481A54217CA66900928D2A /* ListViewController.xib in Resources */,
+				1F481A6F217CAF7A00928D2A /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +289,8 @@
 				1F481A59217CA6EC00928D2A /* ImageCollectionViewCell.swift in Sources */,
 				1F481A53217CA66900928D2A /* ListViewController.swift in Sources */,
 				1F481A67217CAA3D00928D2A /* PhotoListViewModel.swift in Sources */,
+				1F481A71217CAFB000928D2A /* TextCollectionViewCell.swift in Sources */,
+				1F481A6E217CAF7A00928D2A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +300,7 @@
 			files = (
 				1F481A61217CA8B200928D2A /* ListViewControllerTests.swift in Sources */,
 				1F481A63217CA8F300928D2A /* TestHelper.swift in Sources */,
+				1F481A73217CAFF700928D2A /* DetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,3 +40,14 @@ extension UIImage {
         return image
     }
 }
+
+extension String {
+    func size(font: UIFont, maxSize: CGSize) -> CGSize {
+        let attributes: [NSAttributedString.Key: Any] = [.font: font]
+        return self.boundingRect(with: maxSize, options: .usesLineFragmentOrigin, attributes: attributes, context: nil).size
+    }
+
+    func height(font: UIFont, width: CGFloat) -> CGFloat {
+        return ceil(size(font: font, maxSize: CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)).height)
+    }
+}

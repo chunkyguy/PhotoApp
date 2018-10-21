@@ -33,6 +33,15 @@ extension StubDetailViewModel: ListItemViewModelType {
     func loadImage(completion: @escaping (Bool) -> Void) {}
 }
 
+extension StubDetailViewModel: DetailViewModelType {
+    var header: String {
+        return "Photo Details"
+    }
+    var title: String {
+        return "This photo is pretty awesome!"
+    }
+}
+
 struct StubListViewModel {
     let title: String
     let items: [ListItemViewModelType]
