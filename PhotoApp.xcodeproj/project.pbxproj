@@ -24,6 +24,7 @@
 		1F481A6F217CAF7A00928D2A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F481A6D217CAF7A00928D2A /* DetailViewController.xib */; };
 		1F481A71217CAFB000928D2A /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A70217CAFB000928D2A /* TextCollectionViewCell.swift */; };
 		1F481A73217CAFF700928D2A /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A72217CAFF700928D2A /* DetailViewControllerTests.swift */; };
+		1F481A75217CB39D00928D2A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F481A74217CB39D00928D2A /* PhotoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1F481A6D217CAF7A00928D2A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		1F481A70217CAFB000928D2A /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F481A72217CAFF700928D2A /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		1F481A74217CB39D00928D2A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1F481A66217CAA3D00928D2A /* PhotoListViewModel.swift */,
+				1F481A74217CB39D00928D2A /* PhotoViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				1F481A67217CAA3D00928D2A /* PhotoListViewModel.swift in Sources */,
 				1F481A71217CAFB000928D2A /* TextCollectionViewCell.swift in Sources */,
 				1F481A6E217CAF7A00928D2A /* DetailViewController.swift in Sources */,
+				1F481A75217CB39D00928D2A /* PhotoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

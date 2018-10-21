@@ -10,6 +10,7 @@ import UIKit
 
 protocol ListItemViewModelType {
     var image: UIImage { get }
+    var details: DetailViewModelType { get }
     func loadImage(completion: @escaping (Bool) -> Void)
 }
 
@@ -147,6 +148,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: show details
+        let details = DetailViewController(viewModel: viewModel.items[indexPath.item].details)
+        show(details, sender: nil)
     }
 }

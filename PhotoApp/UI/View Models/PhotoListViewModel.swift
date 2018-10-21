@@ -18,7 +18,7 @@ extension PhotoListViewModel: ListViewModelType {
     }
 
     var items: [ListItemViewModelType] {
-        return []
+        return [PhotoViewModel()]
     }
 
     func loadPhotoList(completion: @escaping (Bool) -> Void) {}

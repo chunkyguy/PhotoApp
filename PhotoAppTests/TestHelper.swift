@@ -26,6 +26,10 @@ struct StubDetailViewModel {
 }
 
 extension StubDetailViewModel: ListItemViewModelType {
+    var details: DetailViewModelType {
+        return self
+    }
+
     var image: UIImage {
         return UIImage.make(with: UIColor(hue: hue, saturation: 0.7, brightness: 1.0, alpha: 1.0))
     }
