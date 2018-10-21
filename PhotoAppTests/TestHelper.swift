@@ -59,3 +59,16 @@ struct StubListViewModel {
 extension StubListViewModel: ListViewModelType {
     func loadPhotoList(completion: @escaping (Bool) -> Void) {}
 }
+
+
+func loadData(file: String) -> Data? {
+    let bundle = Bundle(for: BaseSnapshotTest.self)
+    guard let path = bundle.url(forResource: file, withExtension: "json") else {
+        return nil
+    }
+    do {
+        return try Data(contentsOf: path)
+    } catch {
+        return nil
+    }
+}
