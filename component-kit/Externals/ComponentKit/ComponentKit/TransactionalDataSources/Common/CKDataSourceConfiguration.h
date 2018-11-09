@@ -18,8 +18,8 @@
 @interface CKDataSourceConfiguration : NSObject
 
 /**
- @param componentProvider See @protocol(CKComponentProvider)
- @param context Passed to methods exposed by @protocol(CKComponentProvider).
+ @param componentProvider See CKComponentProvider
+ @param context Passed to methods exposed by `CKComponentProvider`.
  @param sizeRange Used for the root layout.
  */
 - (instancetype)initWithComponentProvider:(Class<CKComponentProvider>)componentProvider

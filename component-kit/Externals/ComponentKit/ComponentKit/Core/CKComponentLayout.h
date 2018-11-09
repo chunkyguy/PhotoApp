@@ -75,7 +75,7 @@ struct CKComponentRootLayout {
 
   /**
    This method returns a CKComponentLayout from the cache.
-   @param component The component to look for the layout with.
+   @param scopedComponent The component to look for the layout with.
    */
   auto cachedLayoutForScopedComponent(CKComponent *const scopedComponent) const
   {

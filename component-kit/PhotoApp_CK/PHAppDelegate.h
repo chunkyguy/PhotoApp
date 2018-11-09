@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  PHAppDelegate.h
 //  PhotoApp_CK
 //
 //  Created by Sidharth Juyal on 09/11/2018.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface PHAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
