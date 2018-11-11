@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PAImageDownloader;
+@class PAPhoto;
+
 @interface PHViewController : UIViewController
 
 + (instancetype)viewController;
+- (void)onTap:(PAPhoto *)photo;
 
+@property (readonly) PAImageDownloader *imageDownloader;
 @end
 

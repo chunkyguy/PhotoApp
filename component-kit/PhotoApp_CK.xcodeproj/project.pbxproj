@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F68AF222197212B00F21DD7 /* PHLoadingComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF212197212B00F21DD7 /* PHLoadingComponent.mm */; };
+		1F68AF342197951100F21DD7 /* PANetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF242197951000F21DD7 /* PANetworkService.m */; };
+		1F68AF352197951100F21DD7 /* PANetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF262197951000F21DD7 /* PANetworkRequest.m */; };
+		1F68AF362197951100F21DD7 /* PAPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF272197951000F21DD7 /* PAPhoto.m */; };
+		1F68AF382197951100F21DD7 /* PAImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF2C2197951100F21DD7 /* PAImageRequest.m */; };
+		1F68AF392197951100F21DD7 /* PAImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF2D2197951100F21DD7 /* PAImageLoader.m */; };
+		1F68AF3A2197951100F21DD7 /* PAListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF2E2197951100F21DD7 /* PAListViewModel.m */; };
+		1F68AF3B2197951100F21DD7 /* PAPhotoListReqeust.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF322197951100F21DD7 /* PAPhotoListReqeust.m */; };
+		1F68AF3F21979C5600F21DD7 /* PHPhotoComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF3E21979C5600F21DD7 /* PHPhotoComponent.mm */; };
+		1F68AF42219866E100F21DD7 /* PAImageDownloader.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF41219866E100F21DD7 /* PAImageDownloader.mm */; };
+		1F68AF4521987E3100F21DD7 /* PHRootComponentProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF4421987E3100F21DD7 /* PHRootComponentProvider.mm */; };
+		1F68AF48219880D100F21DD7 /* PHDetailViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF47219880D100F21DD7 /* PHDetailViewController.mm */; };
+		1F68AF4C219883C600F21DD7 /* PHDetailComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F68AF4B219883C600F21DD7 /* PHDetailComponent.mm */; };
 		1F73D75C2195DB7D00A53A1F /* PHAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D75B2195DB7D00A53A1F /* PHAppDelegate.mm */; };
 		1F73D75F2195DB7D00A53A1F /* PHViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F73D75E2195DB7D00A53A1F /* PHViewController.mm */; };
 		1F73D7642195DB8000A53A1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F73D7632195DB8000A53A1F /* Assets.xcassets */; };
@@ -17,6 +30,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F68AF202197212B00F21DD7 /* PHLoadingComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHLoadingComponent.h; sourceTree = "<group>"; };
+		1F68AF212197212B00F21DD7 /* PHLoadingComponent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHLoadingComponent.mm; sourceTree = "<group>"; };
+		1F68AF242197951000F21DD7 /* PANetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PANetworkService.m; sourceTree = "<group>"; };
+		1F68AF252197951000F21DD7 /* PAPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPhoto.h; sourceTree = "<group>"; };
+		1F68AF262197951000F21DD7 /* PANetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PANetworkRequest.m; sourceTree = "<group>"; };
+		1F68AF272197951000F21DD7 /* PAPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPhoto.m; sourceTree = "<group>"; };
+		1F68AF292197951000F21DD7 /* PAImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAImageLoader.h; sourceTree = "<group>"; };
+		1F68AF2A2197951000F21DD7 /* PAListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAListViewModel.h; sourceTree = "<group>"; };
+		1F68AF2B2197951000F21DD7 /* PAImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAImageRequest.h; sourceTree = "<group>"; };
+		1F68AF2C2197951100F21DD7 /* PAImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAImageRequest.m; sourceTree = "<group>"; };
+		1F68AF2D2197951100F21DD7 /* PAImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAImageLoader.m; sourceTree = "<group>"; };
+		1F68AF2E2197951100F21DD7 /* PAListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAListViewModel.m; sourceTree = "<group>"; };
+		1F68AF2F2197951100F21DD7 /* PANetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PANetworkRequest.h; sourceTree = "<group>"; };
+		1F68AF312197951100F21DD7 /* PAPhotoListReqeust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPhotoListReqeust.h; sourceTree = "<group>"; };
+		1F68AF322197951100F21DD7 /* PAPhotoListReqeust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPhotoListReqeust.m; sourceTree = "<group>"; };
+		1F68AF332197951100F21DD7 /* PANetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PANetworkService.h; sourceTree = "<group>"; };
+		1F68AF3D21979C5600F21DD7 /* PHPhotoComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHPhotoComponent.h; sourceTree = "<group>"; };
+		1F68AF3E21979C5600F21DD7 /* PHPhotoComponent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHPhotoComponent.mm; sourceTree = "<group>"; };
+		1F68AF40219866E100F21DD7 /* PAImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PAImageDownloader.h; sourceTree = "<group>"; };
+		1F68AF41219866E100F21DD7 /* PAImageDownloader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PAImageDownloader.mm; sourceTree = "<group>"; };
+		1F68AF4321987E3100F21DD7 /* PHRootComponentProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHRootComponentProvider.h; sourceTree = "<group>"; };
+		1F68AF4421987E3100F21DD7 /* PHRootComponentProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHRootComponentProvider.mm; sourceTree = "<group>"; };
+		1F68AF46219880D100F21DD7 /* PHDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHDetailViewController.h; sourceTree = "<group>"; };
+		1F68AF47219880D100F21DD7 /* PHDetailViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHDetailViewController.mm; sourceTree = "<group>"; };
+		1F68AF4A219883C600F21DD7 /* PHDetailComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHDetailComponent.h; sourceTree = "<group>"; };
+		1F68AF4B219883C600F21DD7 /* PHDetailComponent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHDetailComponent.mm; sourceTree = "<group>"; };
 		1F73D7572195DB7D00A53A1F /* PhotoApp_CK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp_CK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F73D75A2195DB7D00A53A1F /* PHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHAppDelegate.h; sourceTree = "<group>"; };
 		1F73D75B2195DB7D00A53A1F /* PHAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PHAppDelegate.mm; sourceTree = "<group>"; };
@@ -43,6 +82,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F68AF1F2197211200F21DD7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1F68AF202197212B00F21DD7 /* PHLoadingComponent.h */,
+				1F68AF212197212B00F21DD7 /* PHLoadingComponent.mm */,
+				1F68AF3D21979C5600F21DD7 /* PHPhotoComponent.h */,
+				1F68AF3E21979C5600F21DD7 /* PHPhotoComponent.mm */,
+				1F68AF4A219883C600F21DD7 /* PHDetailComponent.h */,
+				1F68AF4B219883C600F21DD7 /* PHDetailComponent.mm */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		1F68AF23219794E900F21DD7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1F68AF2A2197951000F21DD7 /* PAListViewModel.h */,
+				1F68AF2E2197951100F21DD7 /* PAListViewModel.m */,
+				1F68AF252197951000F21DD7 /* PAPhoto.h */,
+				1F68AF272197951000F21DD7 /* PAPhoto.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		1F68AF3C2197960700F21DD7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1F68AF312197951100F21DD7 /* PAPhotoListReqeust.h */,
+				1F68AF322197951100F21DD7 /* PAPhotoListReqeust.m */,
+				1F68AF292197951000F21DD7 /* PAImageLoader.h */,
+				1F68AF2D2197951100F21DD7 /* PAImageLoader.m */,
+				1F68AF2B2197951000F21DD7 /* PAImageRequest.h */,
+				1F68AF2C2197951100F21DD7 /* PAImageRequest.m */,
+				1F68AF2F2197951100F21DD7 /* PANetworkRequest.h */,
+				1F68AF262197951000F21DD7 /* PANetworkRequest.m */,
+				1F68AF332197951100F21DD7 /* PANetworkService.h */,
+				1F68AF242197951000F21DD7 /* PANetworkService.m */,
+				1F68AF40219866E100F21DD7 /* PAImageDownloader.h */,
+				1F68AF41219866E100F21DD7 /* PAImageDownloader.mm */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		1F68AF49219880DB00F21DD7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1F68AF4321987E3100F21DD7 /* PHRootComponentProvider.h */,
+				1F68AF4421987E3100F21DD7 /* PHRootComponentProvider.mm */,
+				1F73D75D2195DB7D00A53A1F /* PHViewController.h */,
+				1F73D75E2195DB7D00A53A1F /* PHViewController.mm */,
+				1F68AF46219880D100F21DD7 /* PHDetailViewController.h */,
+				1F68AF47219880D100F21DD7 /* PHDetailViewController.mm */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		1F73D74E2195DB7D00A53A1F = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +158,10 @@
 		1F73D7592195DB7D00A53A1F /* PhotoApp_CK */ = {
 			isa = PBXGroup;
 			children = (
+				1F68AF49219880DB00F21DD7 /* UI */,
+				1F68AF3C2197960700F21DD7 /* Network */,
+				1F68AF23219794E900F21DD7 /* Data */,
+				1F68AF1F2197211200F21DD7 /* Components */,
 				1FEC11132196178000420534 /* Main */,
 				1F73D7632195DB8000A53A1F /* Assets.xcassets */,
 				1F73D7652195DB8000A53A1F /* LaunchScreen.storyboard */,
@@ -85,8 +184,6 @@
 			children = (
 				1F73D75A2195DB7D00A53A1F /* PHAppDelegate.h */,
 				1F73D75B2195DB7D00A53A1F /* PHAppDelegate.mm */,
-				1F73D75D2195DB7D00A53A1F /* PHViewController.h */,
-				1F73D75E2195DB7D00A53A1F /* PHViewController.mm */,
 				1FEC1114219617B400420534 /* PHAppEngine.h */,
 				1FEC1115219617B400420534 /* PHAppEngine.mm */,
 			);
@@ -165,8 +262,21 @@
 			files = (
 				1F73D75F2195DB7D00A53A1F /* PHViewController.mm in Sources */,
 				1FEC1116219617B400420534 /* PHAppEngine.mm in Sources */,
+				1F68AF4521987E3100F21DD7 /* PHRootComponentProvider.mm in Sources */,
+				1F68AF4C219883C600F21DD7 /* PHDetailComponent.mm in Sources */,
 				1F73D76A2195DB8000A53A1F /* main.m in Sources */,
+				1F68AF352197951100F21DD7 /* PANetworkRequest.m in Sources */,
+				1F68AF3F21979C5600F21DD7 /* PHPhotoComponent.mm in Sources */,
+				1F68AF392197951100F21DD7 /* PAImageLoader.m in Sources */,
 				1F73D75C2195DB7D00A53A1F /* PHAppDelegate.mm in Sources */,
+				1F68AF42219866E100F21DD7 /* PAImageDownloader.mm in Sources */,
+				1F68AF382197951100F21DD7 /* PAImageRequest.m in Sources */,
+				1F68AF3B2197951100F21DD7 /* PAPhotoListReqeust.m in Sources */,
+				1F68AF222197212B00F21DD7 /* PHLoadingComponent.mm in Sources */,
+				1F68AF3A2197951100F21DD7 /* PAListViewModel.m in Sources */,
+				1F68AF48219880D100F21DD7 /* PHDetailViewController.mm in Sources */,
+				1F68AF342197951100F21DD7 /* PANetworkService.m in Sources */,
+				1F68AF362197951100F21DD7 /* PAPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

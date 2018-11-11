@@ -7,13 +7,20 @@
 //
 
 #import "PHViewController.h"
-#include <vector>
-#import <ComponentKit/ComponentKit.h>
-#import "PHLoadingComponent.h"
 
-@interface PHViewController () {
+#import <ComponentKit/ComponentKit.h>
+
+#import "PAListViewModel.h"
+#import "PAPhoto.h"
+#import "PAImageDownloader.h"
+#import "PHRootComponentProvider.h"
+#import "PHDetailViewController.h"
+
+@interface PHViewController () <UICollectionViewDelegateFlowLayout> {
     UICollectionView *_collectionView;
     CKCollectionViewDataSource *_dataSource;
+    PAListViewModel *_viewModel;
+    PAImageDownloader *_imageDownloader;
 }
 
 @end
@@ -31,6 +38,8 @@
     if (self) {
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                              collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
+        _viewModel = [[PAListViewModel alloc] init];
+        _imageDownloader = [[PAImageDownloader alloc] init];
     }
     return self;
 }
@@ -50,6 +59,7 @@
                                                                   views:@{@"C": _collectionView}]];
     }
 
+    _collectionView.delegate = self;
     self.view.backgroundColor = [UIColor grayColor];
 
     // set up data source
@@ -57,8 +67,8 @@
                    initWithCollectionView:_collectionView
                    supplementaryViewDataSource:nil
                    configuration:[[CKDataSourceConfiguration alloc]
-                                  initWithComponentProvider:[self class]
-                                  context:nil
+                                  initWithComponentProvider:[PHRootComponentProvider class]
+                                  context:self
                                   sizeRange:[[CKComponentFlexibleSizeRangeProvider
                                               providerWithFlexibility:CKComponentSizeRangeFlexibleHeight]
                                              sizeRangeForBoundingSize:self.view.bounds.size]]];
@@ -68,7 +78,7 @@
                                            withInsertedSections:[NSIndexSet indexSetWithIndex:0]]build];
     [_dataSource applyChangeset:initialData mode:CKUpdateModeAsynchronous userInfo:nil];
 
-    [self showLoadingComponent];
+    [self fetchImages];
 }
 
 - (void)showLoadingComponent
@@ -78,13 +88,45 @@
     [_dataSource applyChangeset:loadingData mode:CKUpdateModeAsynchronous userInfo:nil];
 }
 
-#pragma mark CKComponentProvider
-+ (CKComponent *)componentForModel:(id<NSObject>)model context:(id<NSObject>)context;
+- (void)fetchImages
 {
-    if ([model isKindOfClass:[NSNull class]]) {
-        return [PHLoadingComponent newWithTintColor:[UIColor redColor]];
+    [self showLoadingComponent];
+    __weak PHViewController *weakSelf = self;
+    [_viewModel loadPhotoList:^(BOOL isGood) {
+        if (isGood) {
+            [weakSelf updateImages];
+        }
+    }];
+}
+
+- (void)updateImages
+{
+    NSArray<PAPhoto *> *images = _viewModel.list;
+    NSMutableDictionary<NSIndexPath *, PAPhoto *> *photoList = [NSMutableDictionary dictionaryWithCapacity:images.count];
+    for (NSInteger idx = 0; idx < [images count]; ++idx) {
+        [photoList
+         setObject:images[idx]
+         forKey:[NSIndexPath indexPathForRow:idx inSection:0]];
     }
-    return nil;
+
+    CKDataSourceChangeset *loadingData = [[[CKDataSourceChangesetBuilder transactionalComponentDataSourceChangeset] withInsertedItems:photoList] build];
+    [_dataSource applyChangeset:loadingData mode:CKUpdateModeAsynchronous userInfo:nil];
+}
+
+- (void)onTap:(PAPhoto *)photo
+{
+    [self
+     showViewController:[PHDetailViewController viewControlerWithPhoto:photo imageDownloader:_imageDownloader]
+     sender:self];
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [_dataSource sizeForItemAtIndexPath:indexPath];
 }
 
 #pragma mark UICollectionViewDelegate
