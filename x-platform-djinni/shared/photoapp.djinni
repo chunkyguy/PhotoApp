@@ -1,0 +1,4 @@
+photoapp = interface +c {
+  static create(): photoapp;
+  get_photoapp(): string;
+}
