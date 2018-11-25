@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PAPhotoapp.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    PAPhotoapp *app = [PAPhotoapp create];
+    NSLog(@"%@", [app getPhotoapp]);
+
     return YES;
 }
 

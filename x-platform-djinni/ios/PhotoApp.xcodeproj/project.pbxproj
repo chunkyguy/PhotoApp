@@ -10,9 +10,14 @@
 		1F1039E721A9CB4D00E5EE2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1039E521A9CB4D00E5EE2F /* Main.storyboard */; };
 		1F1039E921A9CB4F00E5EE2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1039E821A9CB4F00E5EE2F /* Assets.xcassets */; };
 		1F1039EC21A9CB4F00E5EE2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1039EA21A9CB4F00E5EE2F /* LaunchScreen.storyboard */; };
-		1F1039FC21A9CC0A00E5EE2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039F921A9CC0A00E5EE2F /* main.m */; };
-		1F1039FD21A9CC0A00E5EE2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039FA21A9CC0A00E5EE2F /* AppDelegate.m */; };
-		1F1039FE21A9CC0A00E5EE2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039FB21A9CC0A00E5EE2F /* ViewController.m */; };
+		1F1039FC21A9CC0A00E5EE2F /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039F921A9CC0A00E5EE2F /* main.mm */; };
+		1F1039FD21A9CC0A00E5EE2F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039FA21A9CC0A00E5EE2F /* AppDelegate.mm */; };
+		1F1039FE21A9CC0A00E5EE2F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F1039FB21A9CC0A00E5EE2F /* ViewController.mm */; };
+		1F103A6421A9DDD600E5EE2F /* PAPhotoapp+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F103A3C21A9D81800E5EE2F /* PAPhotoapp+Private.mm */; };
+		1F103A8321A9E01900E5EE2F /* photoappImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F103A8221A9E01900E5EE2F /* photoappImpl.cpp */; };
+		1F5D8F9321AAE31F00C30EA5 /* DJIProxyCaches.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D8F8D21AAE31E00C30EA5 /* DJIProxyCaches.mm */; };
+		1F5D8F9421AAE31F00C30EA5 /* DJIError.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D8F9021AAE31E00C30EA5 /* DJIError.mm */; };
+		1F5D8F9721AAE36A00C30EA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5D8F9621AAE36A00C30EA5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +28,24 @@
 		1F1039ED21A9CB4F00E5EE2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1039F721A9CC0A00E5EE2F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PhotoApp/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F1039F821A9CC0A00E5EE2F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = PhotoApp/ViewController.h; sourceTree = SOURCE_ROOT; };
-		1F1039F921A9CC0A00E5EE2F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PhotoApp/main.m; sourceTree = SOURCE_ROOT; };
-		1F1039FA21A9CC0A00E5EE2F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PhotoApp/AppDelegate.m; sourceTree = SOURCE_ROOT; };
-		1F1039FB21A9CC0A00E5EE2F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = PhotoApp/ViewController.m; sourceTree = SOURCE_ROOT; };
+		1F1039F921A9CC0A00E5EE2F /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = PhotoApp/main.mm; sourceTree = SOURCE_ROOT; };
+		1F1039FA21A9CC0A00E5EE2F /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = PhotoApp/AppDelegate.mm; sourceTree = SOURCE_ROOT; };
+		1F1039FB21A9CC0A00E5EE2F /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = PhotoApp/ViewController.mm; sourceTree = SOURCE_ROOT; };
+		1F103A3A21A9D81800E5EE2F /* PAPhotoapp+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PAPhotoapp+Private.h"; path = "../../shared/generated-src/objc/PAPhotoapp+Private.h"; sourceTree = "<group>"; };
+		1F103A3B21A9D81800E5EE2F /* PAPhotoapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PAPhotoapp.h; path = "../../shared/generated-src/objc/PAPhotoapp.h"; sourceTree = "<group>"; };
+		1F103A3C21A9D81800E5EE2F /* PAPhotoapp+Private.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "PAPhotoapp+Private.mm"; path = "../../shared/generated-src/objc/PAPhotoapp+Private.mm"; sourceTree = "<group>"; };
+		1F103A8121A9E01900E5EE2F /* photoappImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = photoappImpl.hpp; sourceTree = "<group>"; };
+		1F103A8221A9E01900E5EE2F /* photoappImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = photoappImpl.cpp; sourceTree = "<group>"; };
+		1F5D8F8A21AAE2FC00C30EA5 /* djinni_common.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = djinni_common.hpp; path = "../../shared/support-lib/djinni_common.hpp"; sourceTree = "<group>"; };
+		1F5D8F8B21AAE30900C30EA5 /* proxy_cache_interface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = proxy_cache_interface.hpp; path = "../../shared/support-lib/proxy_cache_interface.hpp"; sourceTree = "<group>"; };
+		1F5D8F8C21AAE30900C30EA5 /* proxy_cache_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = proxy_cache_impl.hpp; path = "../../shared/support-lib/proxy_cache_impl.hpp"; sourceTree = "<group>"; };
+		1F5D8F8D21AAE31E00C30EA5 /* DJIProxyCaches.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DJIProxyCaches.mm; path = "../../shared/support-lib/objc/DJIProxyCaches.mm"; sourceTree = "<group>"; };
+		1F5D8F8E21AAE31E00C30EA5 /* DJICppWrapperCache+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DJICppWrapperCache+Private.h"; path = "../../shared/support-lib/objc/DJICppWrapperCache+Private.h"; sourceTree = "<group>"; };
+		1F5D8F8F21AAE31E00C30EA5 /* DJIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DJIError.h; path = "../../shared/support-lib/objc/DJIError.h"; sourceTree = "<group>"; };
+		1F5D8F9021AAE31E00C30EA5 /* DJIError.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = DJIError.mm; path = "../../shared/support-lib/objc/DJIError.mm"; sourceTree = "<group>"; };
+		1F5D8F9121AAE31E00C30EA5 /* DJIMarshal+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DJIMarshal+Private.h"; path = "../../shared/support-lib/objc/DJIMarshal+Private.h"; sourceTree = "<group>"; };
+		1F5D8F9221AAE31E00C30EA5 /* DJIObjcWrapperCache+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DJIObjcWrapperCache+Private.h"; path = "../../shared/support-lib/objc/DJIObjcWrapperCache+Private.h"; sourceTree = "<group>"; };
+		1F5D8F9621AAE36A00C30EA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5D8F9721AAE36A00C30EA5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +65,7 @@
 			children = (
 				1F1039DE21A9CB4D00E5EE2F /* PhotoApp */,
 				1F1039DD21A9CB4D00E5EE2F /* Products */,
+				1F5D8F9521AAE36A00C30EA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +80,11 @@
 		1F1039DE21A9CB4D00E5EE2F /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
-				1F103A0121A9CC7200E5EE2F /* Resources */,
+				1F103A8421A9E01E00E5EE2F /* lib */,
+				1F103A7A21A9DF1E00E5EE2F /* Support Lib */,
+				1F103A3921A9D7C500E5EE2F /* generated-src */,
 				1F103A0021A9CC5B00E5EE2F /* Classes */,
+				1F103A0121A9CC7200E5EE2F /* Resources */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -68,10 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				1F1039F721A9CC0A00E5EE2F /* AppDelegate.h */,
-				1F1039FA21A9CC0A00E5EE2F /* AppDelegate.m */,
-				1F1039F921A9CC0A00E5EE2F /* main.m */,
+				1F1039FA21A9CC0A00E5EE2F /* AppDelegate.mm */,
+				1F1039F921A9CC0A00E5EE2F /* main.mm */,
 				1F1039F821A9CC0A00E5EE2F /* ViewController.h */,
-				1F1039FB21A9CC0A00E5EE2F /* ViewController.m */,
+				1F1039FB21A9CC0A00E5EE2F /* ViewController.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -85,6 +110,49 @@
 				1F1039ED21A9CB4F00E5EE2F /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		1F103A3921A9D7C500E5EE2F /* generated-src */ = {
+			isa = PBXGroup;
+			children = (
+				1F103A3B21A9D81800E5EE2F /* PAPhotoapp.h */,
+				1F103A3A21A9D81800E5EE2F /* PAPhotoapp+Private.h */,
+				1F103A3C21A9D81800E5EE2F /* PAPhotoapp+Private.mm */,
+			);
+			name = "generated-src";
+			sourceTree = "<group>";
+		};
+		1F103A7A21A9DF1E00E5EE2F /* Support Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1F5D8F8A21AAE2FC00C30EA5 /* djinni_common.hpp */,
+				1F5D8F8C21AAE30900C30EA5 /* proxy_cache_impl.hpp */,
+				1F5D8F8B21AAE30900C30EA5 /* proxy_cache_interface.hpp */,
+				1F5D8F8E21AAE31E00C30EA5 /* DJICppWrapperCache+Private.h */,
+				1F5D8F8F21AAE31E00C30EA5 /* DJIError.h */,
+				1F5D8F9021AAE31E00C30EA5 /* DJIError.mm */,
+				1F5D8F9121AAE31E00C30EA5 /* DJIMarshal+Private.h */,
+				1F5D8F9221AAE31E00C30EA5 /* DJIObjcWrapperCache+Private.h */,
+				1F5D8F8D21AAE31E00C30EA5 /* DJIProxyCaches.mm */,
+			);
+			name = "Support Lib";
+			sourceTree = "<group>";
+		};
+		1F103A8421A9E01E00E5EE2F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				1F103A8221A9E01900E5EE2F /* photoappImpl.cpp */,
+				1F103A8121A9E01900E5EE2F /* photoappImpl.hpp */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		1F5D8F9521AAE36A00C30EA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F5D8F9621AAE36A00C30EA5 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,9 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1039FE21A9CC0A00E5EE2F /* ViewController.m in Sources */,
-				1F1039FD21A9CC0A00E5EE2F /* AppDelegate.m in Sources */,
-				1F1039FC21A9CC0A00E5EE2F /* main.m in Sources */,
+				1F5D8F9421AAE31F00C30EA5 /* DJIError.mm in Sources */,
+				1F1039FE21A9CC0A00E5EE2F /* ViewController.mm in Sources */,
+				1F1039FD21A9CC0A00E5EE2F /* AppDelegate.mm in Sources */,
+				1F1039FC21A9CC0A00E5EE2F /* main.mm in Sources */,
+				1F103A6421A9DDD600E5EE2F /* PAPhotoapp+Private.mm in Sources */,
+				1F103A8321A9E01900E5EE2F /* photoappImpl.cpp in Sources */,
+				1F5D8F9321AAE31F00C30EA5 /* DJIProxyCaches.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FAAALUHC5H;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../shared/generated-src/cpp";
 				INFOPLIST_FILE = PhotoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,6 +393,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FAAALUHC5H;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../shared/generated-src/cpp";
 				INFOPLIST_FILE = PhotoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

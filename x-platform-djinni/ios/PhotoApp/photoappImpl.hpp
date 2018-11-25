@@ -14,8 +14,6 @@
 namespace photoapp {
     class PhotoappImpl: public Photoapp {
     public:
-        static std::shared_ptr<Photoapp> create();
-
         PhotoappImpl();
         virtual ~PhotoappImpl();
         virtual std::string get_photoapp();
