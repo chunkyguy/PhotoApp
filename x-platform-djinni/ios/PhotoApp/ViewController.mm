@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <UIKit/UIKit.h>
+#import "PAPhotoapp.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
@@ -17,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    PAPhotoapp *app = [PAPhotoapp create];
+    self.label.text = [app getPhotoapp];
 }
 
 
