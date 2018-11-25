@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../shared/PhotoAppLib.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PhotoApp.xcodeproj">
    </FileRef>
 </Workspace>
