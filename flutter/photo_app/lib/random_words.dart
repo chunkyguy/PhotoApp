@@ -14,8 +14,33 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Photo App")),
+      appBar: AppBar(
+        title: Text("Photo App"),
+        actions: <Widget>[
+          IconButton(icon: const Icon(Icons.list), onPressed: onDetails,)
+        ],
+        ),
       body: _buildSuggestion(),
+    );
+  }
+
+  void onDetails() {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (BuildContext context) {
+
+          final Iterable<ListTile> tiles = _saved.map((WordPair word) {
+            return ListTile(title: Text(word.asPascalCase, style: _biggerFont));
+          });
+
+          final List<Widget> children = ListTile.divideTiles(context: context, tiles: tiles).toList();
+
+          return Scaffold(
+            appBar: AppBar(title: const Text('Favorites')),
+            body: ListView(children: children)
+          );
+        }
+      )
     );
   }
 
@@ -48,6 +73,15 @@ class RandomWordsState extends State<RandomWords> {
         isSaved ? Icons.favorite : Icons.favorite_border,
         color: isSaved ? Colors.red : null,
       ),
+      onTap: () {
+        setState((){
+          if (isSaved) {
+            _saved.remove(word);
+          } else {
+            _saved.add(word);
+          }
+        });
+      },
     );
   }
 }
