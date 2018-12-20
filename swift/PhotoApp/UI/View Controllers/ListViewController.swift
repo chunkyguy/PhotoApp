@@ -101,10 +101,10 @@ extension ListViewController: UICollectionViewDataSource {
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath) -> UICollectionReusableView {
 
-        guard kind == UICollectionView.elementKindSectionHeader else {
-            assertionFailure("Undefined kind \(kind)")
-            return UICollectionReusableView()
-        }
+//        guard kind == UICollectionView.elementKindSectionHeader else {
+//            assertionFailure("Undefined kind \(kind)")
+//            return UICollectionReusableView()
+//        }
 
         let supplementaryView = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
@@ -157,6 +157,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 extension ListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let details = DetailViewController(viewModel: viewModel.items[indexPath.item].details)
-        show(details, sender: nil)
+        let detailsNavigationController = UINavigationController(rootViewController: details)
+        navigationController?.present(detailsNavigationController, animated: true, completion: nil)
     }
 }

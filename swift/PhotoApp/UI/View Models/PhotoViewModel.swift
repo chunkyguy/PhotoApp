@@ -11,9 +11,11 @@ import UIKit
 class PhotoViewModel {
     private(set) var image: UIImage = ImageLoader.placeholder ?? UIImage.make(with: .gray)
     private let photo: Photo
+    private let imageLoader: ImageLoader
 
-    init(photo: Photo) {
+    init(photo: Photo, imageLoader: ImageLoader) {
         self.photo = photo
+        self.imageLoader = imageLoader
     }
 }
 
@@ -23,13 +25,13 @@ extension PhotoViewModel: ListItemViewModelType {
     }
 
     var details: DetailViewModelType {
-        return PhotoDetailViewModel(photo: photo, thumb: image)
+        return PhotoDetailViewModel(photo: photo, thumb: image, imageLoader: imageLoader)
     }
 }
 
 extension PhotoViewModel: ImageProvider {
     func loadImage(completion: @escaping (Bool) -> Void) {
-        ImageLoader.loadImage(photo: photo, resolution: .thumb) { [weak self] image in
+        imageLoader.loadImage(photo: photo, resolution: .thumb) { [weak self] image in
             guard let image = image else {
                 completion(false)
                 return

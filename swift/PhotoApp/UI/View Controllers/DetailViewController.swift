@@ -31,6 +31,10 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        title = "Details"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(onCancel))
+
         collectionView.register(
             ImageCollectionViewCell.self,
             forCellWithReuseIdentifier: ImageCollectionViewCell.reuseIdentifier
@@ -40,13 +44,15 @@ class DetailViewController: UIViewController {
             forCellWithReuseIdentifier: TextCollectionViewCell.reuseIdentifier
         )
 
-        title = viewModel.title
-
         collectionView.dataSource = self
         collectionView.delegate = self
 
         view.backgroundColor = .black
         collectionView.backgroundColor = .black
+    }
+
+   @objc func onCancel() {
+        dismiss(animated: true, completion: nil)
     }
 }
 

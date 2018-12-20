@@ -9,54 +9,114 @@
 import Foundation
 import UIKit
 
-struct NetworkService {
+enum Resolution {
+    case thumb
+    case full
+}
 
-    enum Request {
-        case photoList
-        case image(URL)
+protocol PhotoProvider: class {
+    var photListURL: URL? { get }
+    func imageURL(for photo: Photo, resolution: Resolution) -> URL?
+    func photoList(data: Data) -> [Photo]?
 
-        var url: URL? {
-            switch self {
-            case .photoList: return URL(string: "https://jsonplaceholder.typicode.com/photos")
-            case .image(let url): return url
-            }
-        }
+}
+
+struct JSONPlaceholderPhoto: Photo, Codable {
+    let id: Int
+    let title: String
+    let url: String
+    let thumbnailUrl: String
+}
+
+class JSONPlaceholderPhotoProvider {
+}
+
+extension JSONPlaceholderPhotoProvider: PhotoProvider {
+    var photListURL: URL? {
+        return URL(string: "https://jsonplaceholder.typicode.com/photos")
     }
 
-    private static func getData(request: Request, completion: @escaping (Data?) -> Void) {
-
-        guard let url = request.url else {
-            // TODO: better error handling
-            completion(nil)
-            return
+    func imageURL(for photo: Photo, resolution: Resolution) -> URL? {
+        guard let jsonPhoto = photo as? JSONPlaceholderPhoto else {
+            assertionFailure("Invalid photo")
+            return nil
         }
+
+        let urlString: String = {
+            switch resolution {
+            case .thumb: return jsonPhoto.thumbnailUrl
+            case .full: return jsonPhoto.url
+            }
+        }()
+
+        return URL(string: urlString)
+    }
+
+    func photoList(data: Data) -> [Photo]? {
+        do {
+            let photos = try JSONDecoder().decode([JSONPlaceholderPhoto].self, from: data)
+            return photos
+        } catch {
+            return nil
+        }
+    }
+}
+
+protocol NetworkServiceType {
+    func getPhotoList(completion: @escaping ([Photo]?) -> Void)
+    func getImage(photo: Photo, resolution: Resolution, completion: @escaping (Data?) -> Void)
+}
+
+
+struct NetworkService {
+
+    private let provider: PhotoProvider
+
+    init(provider: PhotoProvider) {
+        self.provider = provider
+    }
+
+    private func getData(requestURL: URL, completion: @escaping (Data?) -> Void) {
 
         let responseHandler: (Data?, URLResponse?, Error?) -> Void = { data, _, _ in completion(data) }
 
         URLSession(configuration: .default)
-            .dataTask(with: url, completionHandler: responseHandler)
+            .dataTask(with: requestURL, completionHandler: responseHandler)
             .resume()
     }
+}
 
-    static func getPhotoList(completion: @escaping ([Photo]?) -> Void) {
-        getData(request: .photoList) { data in
-            guard let data = data else {
-                // TODO: better error handling
-                completion(nil)
-                return
+extension NetworkService: NetworkServiceType {
+    func getPhotoList(completion: @escaping ([Photo]?) -> Void) {
+
+        guard let url = provider.photListURL else {
+            // error
+            completion(nil)
+            return
+        }
+
+        getData(requestURL: url) { [weak provider] data in
+            guard
+                let data = data,
+                let photoList = provider?.photoList(data: data)
+                else {
+                    // error
+                    completion(nil)
+                    return
             }
 
-            do {
-                let photoList = try JSONDecoder().decode([Photo].self, from: data)
-                completion(photoList)
-            } catch {
-                // TODO: better error handling
-                completion(nil)
-            }
+            completion(photoList)
         }
     }
 
-    static func getPhoto(url: URL, completion: @escaping (UIImage?) -> Void) {
-        getData(request: .image(url)) { data in completion(data.flatMap(UIImage.init)) }
+
+    func getImage(photo: Photo, resolution: Resolution, completion: @escaping (Data?) -> Void) {
+        guard let url = provider.imageURL(for: photo, resolution: resolution) else {
+            // error
+            completion(nil)
+            return
+        }
+
+        getData(requestURL: url, completion: completion)
     }
 }

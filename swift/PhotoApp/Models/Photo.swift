@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Photo: Codable {
-    let id: Int
-    let title: String
-    let url: String
-    let thumbnailUrl: String
+protocol Photo {
+    var id: Int { get }
+    var title: String { get }
 }
+

@@ -10,19 +10,25 @@
 import UIKit
 
 class AppEngine {
-    private var window: UIWindow?
+    private let window = UIWindow(frame: UIScreen.main.bounds)
+    private let networkService: NetworkService
+    private let imageLoader: ImageLoader
 
     init() {
+        networkService = NetworkService(provider: JSONPlaceholderPhotoProvider())
+        imageLoader = ImageLoader(networkService: networkService)
     }
 
-    func start(window: UIWindow) {
-        let listViewController = ListViewController(viewModel: PhotoListViewModel())
+    func start() {
+
+        let listViewController = ListViewController(viewModel: PhotoListViewModel(networkService: networkService, imageLoader: imageLoader))
         let rootViewController = UINavigationController(rootViewController: listViewController)
         decorate(navBar: rootViewController.navigationBar)
         window.rootViewController = rootViewController
 
         window.backgroundColor = .green
-        self.window = window
+
+        window.makeKeyAndVisible()
     }
 
     func stop() {

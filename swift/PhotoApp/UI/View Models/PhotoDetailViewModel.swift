@@ -11,10 +11,12 @@ import UIKit
 class PhotoDetailViewModel {
     private let photo: Photo
     private(set) var image: UIImage
+    private let imageLoader: ImageLoader
 
-    init(photo: Photo, thumb: UIImage) {
+    init(photo: Photo, thumb: UIImage, imageLoader: ImageLoader) {
         self.photo = photo
         self.image = thumb
+        self.imageLoader = imageLoader
     }
 }
 
@@ -26,7 +28,7 @@ extension PhotoDetailViewModel: DetailViewModelType {
 
 extension PhotoDetailViewModel: ImageProvider {
     func loadImage(completion: @escaping (Bool) -> Void) {
-        ImageLoader.loadImage(photo: photo, resolution: .full) { [weak self] image in
+        imageLoader.loadImage(photo: photo, resolution: .full) { [weak self] image in
             guard let image = image else {
                 completion(false)
                 return

@@ -8,38 +8,30 @@
 
 import UIKit
 
-struct ImageLoader {
+class ImageLoader {
 
     static let placeholder = UIImage(named: "placeholder")
 
-    enum Resolution {
-        case thumb
-        case full
+    private let networkService: NetworkServiceType
+
+    init(networkService: NetworkServiceType) {
+        self.networkService = networkService
     }
 
-    static func loadImage(photo: Photo, resolution: Resolution, completion: @escaping (UIImage?) -> Void) {
-        guard let imageURL = photo.imageURL(resolution: resolution) else {
-            completion(nil)
-            return
-        }
+    func loadImage(photo: Photo, resolution: Resolution, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
 
-        DispatchQueue.global(qos: .userInitiated).async {
-            NetworkService.getPhoto(url: imageURL) {  image in
-                DispatchQueue.main.async { completion(image) }
+            guard let networkService = self?.networkService else {
+                completion(nil)
+                return
+            }
+
+            networkService.getImage(photo: photo, resolution: resolution) {  imageData in
+                DispatchQueue.main.async {
+                    completion(imageData.flatMap(UIImage.init))
+                }
             }
         }
     }
 }
 
-fileprivate extension Photo {
-    func imageURL(resolution: ImageLoader.Resolution) -> URL? {
-        let urlString: String = {
-            switch resolution {
-            case .thumb: return thumbnailUrl
-            case .full: return url
-            }
-        }()
-
-        return URL(string: urlString)
-    }
-}
