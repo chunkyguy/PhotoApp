@@ -4,7 +4,8 @@ import { Text, View, FlatList, ActivityIndicator, Image } from 'react-native';
 class ImageTile extends Component {
   render() {
     return <View>
-      <Image source={{uri: this.props.source}} style={{ width: 150, height: 150 }} />
+      <Image source={{ uri: this.props.source }} style={{ width: 150, height: 150 }} />
+      <Text>{this.props.title}</Text>
     </View>
   }
 }
@@ -48,7 +49,10 @@ export default class PhotoApp extends Component {
         <Text style={{ fontSize: 32 }}>{this.state.title}</Text>
         <FlatList
           data={this.state.dataSource}
-          renderItem={({ item }) => <ImageTile source={item.thumbnailUrl} />}
+          renderItem={({ item }) => <ImageTile
+            source={item.thumbnailUrl}
+            title={item.title}
+          />}
           keyExtractor={({ id }, index) => id}
         />
 
