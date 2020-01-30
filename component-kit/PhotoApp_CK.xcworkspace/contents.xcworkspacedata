@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Externals/ComponentKit/ComponentKit.xcodeproj">
+      location = "group:PhotoApp_CK.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:PhotoApp_CK.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

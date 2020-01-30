@@ -71,7 +71,7 @@
                                              sizeRangeForBoundingSize:self.view.bounds.size]]];
 
     // render initial data
-    CKDataSourceChangesetBuilder *builder = [CKDataSourceChangesetBuilder transactionalComponentDataSourceChangeset];
+    CKDataSourceChangesetBuilder *builder = [CKDataSourceChangesetBuilder dataSourceChangeset];
     [builder withInsertedSections:[NSIndexSet indexSetWithIndex:0]];
     [builder withInsertedItems:@{[NSIndexPath indexPathForRow:0 inSection:0]: _photo}];
     [_dataSource applyChangeset:[builder build] mode:CKUpdateModeAsynchronous userInfo:nil];

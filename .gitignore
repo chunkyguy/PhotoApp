@@ -15,16 +15,3 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
-Pods
-
-# djinni
-x-platform-djinni/shared/deps/
-
-# component kit
-component-kit/Externals/
-
-# objc
-objc/External/
-
-# swift
-swift/External/

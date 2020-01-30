@@ -74,7 +74,7 @@
                                              sizeRangeForBoundingSize:self.view.bounds.size]]];
 
     // render initial data
-    CKDataSourceChangeset *initialData = [[[CKDataSourceChangesetBuilder transactionalComponentDataSourceChangeset]
+    CKDataSourceChangeset *initialData = [[[CKDataSourceChangesetBuilder dataSourceChangeset]
                                            withInsertedSections:[NSIndexSet indexSetWithIndex:0]]build];
     [_dataSource applyChangeset:initialData mode:CKUpdateModeAsynchronous userInfo:nil];
 
@@ -84,7 +84,7 @@
 - (void)showLoadingComponent
 {
     NSDictionary<NSIndexPath *, NSObject *> *loadingItem = @{[NSIndexPath indexPathForRow:0 inSection:0]: [NSNull null]};
-    CKDataSourceChangeset *loadingData = [[[CKDataSourceChangesetBuilder transactionalComponentDataSourceChangeset] withInsertedItems:loadingItem] build];
+    CKDataSourceChangeset *loadingData = [[[CKDataSourceChangesetBuilder dataSourceChangeset] withInsertedItems:loadingItem] build];
     [_dataSource applyChangeset:loadingData mode:CKUpdateModeAsynchronous userInfo:nil];
 }
 
@@ -109,7 +109,7 @@
          forKey:[NSIndexPath indexPathForRow:idx inSection:0]];
     }
 
-    CKDataSourceChangeset *loadingData = [[[CKDataSourceChangesetBuilder transactionalComponentDataSourceChangeset] withInsertedItems:photoList] build];
+    CKDataSourceChangeset *loadingData = [[[CKDataSourceChangesetBuilder dataSourceChangeset] withInsertedItems:photoList] build];
     [_dataSource applyChangeset:loadingData mode:CKUpdateModeAsynchronous userInfo:nil];
 }
 

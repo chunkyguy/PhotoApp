@@ -1,0 +1,20 @@
+PODS:
+  - ComponentKit (0.29):
+    - Yoga (~> 1.14)
+  - Yoga (1.14.0)
+
+DEPENDENCIES:
+  - ComponentKit
+
+SPEC REPOS:
+  trunk:
+    - ComponentKit
+    - Yoga
+
+SPEC CHECKSUMS:
+  ComponentKit: f8ceb6ffdf33e0c229eac8aadac5df2329902d41
+  Yoga: cff67a400f6b74dc38eb0bad4f156673d9aa980c
+
+PODFILE CHECKSUM: b39cdc6534608178ba838f3fd996c0a121178505
+
+COCOAPODS: 1.8.4
