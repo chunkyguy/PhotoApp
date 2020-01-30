@@ -1,7 +1,18 @@
 # PhotoApp
-Instagram clone using various tools
 
-This is my hello world app when trying out a new framework for building iOS apps.
+| Name         | List Screen | Detail Screen | Notes |
+|--------------|-------------|---------------|-------|
+| React Native | [ ]         | [ ]           | [ ]   |
+| Objc MRR     | [ ]         | [ ]           | [ ]   |
+| Djinni       | [ ]         | [ ]           | [ ]   |
+| Swift        | [ ]         | [ ]           | [ ]   |
+| Objc ARC     | [ ]         | [ ]           | [ ]   |
+| Flutter      | [ ]         | [ ]           | [ ]   |
+| ComponentKit | [ ]         | [ ]           | [ ]   |
+| Boden        | [ ]         | [ ]           | [ ]   |
+
+
+This is a hello world app when trying out a new framework for building iOS apps.
 
 This app has 3 screens:
 
