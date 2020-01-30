@@ -2,13 +2,13 @@
 
 | Name         | List Screen | Detail Screen | Notes |
 |--------------|-------------|---------------|-------|
-| React Native | ✅           | ✅             |       |
-| Objc MRR     | ✅           | ✅             |       |
-| Djinni       | ❌           | ❌             |       |
 | Swift        | ✅           | ✅             |       |
 | Objc ARC     | ✅           | ✅             |       |
-| Flutter      | ✅           | ✅             |       |
+| Objc MRR     | ✅           | ✅             |       |
 | ComponentKit | ✅           | ✅             |       |
+| Flutter      | ✅           | ✅             |       |
+| React Native | ✅           | ✅             |       |
+| Djinni       | ❌           | ❌             |       |
 | Boden        | ❌           | ❌             |       |
 
 
