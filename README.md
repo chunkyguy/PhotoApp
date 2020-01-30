@@ -2,14 +2,14 @@
 
 | Name         | List Screen | Detail Screen | Notes |
 |--------------|-------------|---------------|-------|
-| React Native | [ ]         | [ ]           | [ ]   |
-| Objc MRR     | [ ]         | [ ]           | [ ]   |
-| Djinni       | [ ]         | [ ]           | [ ]   |
-| Swift        | [ ]         | [ ]           | [ ]   |
-| Objc ARC     | [ ]         | [ ]           | [ ]   |
-| Flutter      | [ ]         | [ ]           | [ ]   |
-| ComponentKit | [ ]         | [ ]           | [ ]   |
-| Boden        | [ ]         | [ ]           | [ ]   |
+| React Native | ✅           | ✅             |       |
+| Objc MRR     | ✅           | ✅             |       |
+| Djinni       | ❌           | ❌             |       |
+| Swift        | ✅           | ✅             |       |
+| Objc ARC     | ✅           | ✅             |       |
+| Flutter      | ✅           | ✅             |       |
+| ComponentKit | ✅           | ✅             |       |
+| Boden        | ❌           | ❌             |       |
 
 
 This is a hello world app when trying out a new framework for building iOS apps.
