@@ -7,7 +7,7 @@
 | Objc MRR     | ✅           | ✅             |       |
 | ComponentKit | ✅           | ✅             |       |
 | Flutter      | ✅           | ✅             |       |
-| React Native | ✅           | ✅             |       |
+| React Native | ✅           | ❌             |       |
 | Djinni       | ❌           | ❌             |       |
 | Boden        | ❌           | ❌             |       |
 
