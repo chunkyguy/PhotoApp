@@ -1,5 +1,7 @@
 # PhotoApp
 
+### Table
+
 | Name         | List Screen | Detail Screen | Notes |
 |--------------|-------------|---------------|-------|
 | Swift        | ✅           | ✅             |       |
@@ -11,10 +13,11 @@
 | Djinni       | ❌           | ❌             |       |
 | Boden        | ❌           | ❌             |       |
 
+### Description
 
 This is a hello world app when trying out a new framework for building iOS apps.
 
-This app has 3 screens:
+The app has 3 screens:
 
 * A loading screen
 * A list screen that fetches and draws a list of images (think 2 column UICollectionView)
