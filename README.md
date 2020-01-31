@@ -1,5 +1,7 @@
 # PhotoApp
 
+The goal of the project is to get first hand experience with building the same mobile app with every available tools and compare them.
+
 ### Table
 
 | Name         | List Screen | Detail Screen | Notes |
@@ -14,8 +16,6 @@
 | Boden        | ❌           | ❌             |       |
 
 ### Description
-
-This is a hello world app when trying out a new framework for building iOS apps.
 
 The app has 3 screens:
 
