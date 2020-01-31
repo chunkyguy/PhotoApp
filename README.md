@@ -1,6 +1,6 @@
 # PhotoApp
 
-The goal of the project is to get first hand experience with building the same mobile app with every available tools and compare them.
+The goal of the project is to get first hand experience with building the same mobile app with every available tool and compare them.
 
 ### Table
 
