@@ -14,6 +14,7 @@ The goal of the project is to get first hand experience with building the same m
 | React Native | ✅           | ❌             |       |
 | Djinni       | ❌           | ❌             |       |
 | Boden        | ❌           | ❌             |       |
+| SwiftUI      | ✅           | ✅             |       |
 
 ### Description
 
@@ -25,6 +26,6 @@ The app has 3 screens:
 
 ### Screenshots
 
-![Loading](https://github.com/chunkyguy/PhotoApp/blob/master/swift/Screenshots/00%20Loading.png)
-![List](https://github.com/chunkyguy/PhotoApp/blob/master/swift/Screenshots/01%20Home.png)
-![Details](https://github.com/chunkyguy/PhotoApp/blob/master/swift/Screenshots/02%20Details.png)
+![Loading](screenshots/00_Loading.png)
+![List](screenshots/01_Home.png)
+![Details](screenshots/02_Details)
