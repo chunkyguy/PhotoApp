@@ -28,4 +28,4 @@ The app has 3 screens:
 
 ![Loading](screenshots/00_Loading.png)
 ![List](screenshots/01_Home.png)
-![Details](screenshots/02_Details)
+![Details](screenshots/02_Details.png)
