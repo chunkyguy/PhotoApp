@@ -5,15 +5,15 @@ import SwiftUI
 
 @MainActor
 class AppController: ObservableObject {
-  private let networkService = NetworkService(provider: PhotoProvider())
+  private let networkController = NetworkController()
 
   @Published var photos: [Photo] = []
   @Published var isFetching = false
 
-  func getPhotoList() async {
+  func fetchPhotoList() async {
     isFetching = true
     do {
-      photos = try await networkService.getPhotoList()
+      photos = try await networkController.photoList
     } catch let error {
       print("error: \(error)")
     }

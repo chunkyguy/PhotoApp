@@ -12,7 +12,7 @@ struct PhotoRootView: View {
         .navigationTitle("Photos")
     }
     .task {
-      await controller.getPhotoList()
+      await controller.fetchPhotoList()
     }
   }
 }
