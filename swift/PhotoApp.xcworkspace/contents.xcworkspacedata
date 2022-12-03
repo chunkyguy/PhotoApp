@@ -5,6 +5,6 @@
       location = "group:PhotoApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:External/ios-snapshot-test-case/FBSnapshotTestCase.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

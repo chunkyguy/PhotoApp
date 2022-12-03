@@ -9,29 +9,29 @@
 import UIKit
 
 class ImageLoader {
-
-    static let placeholder = UIImage(named: "placeholder")
-
-    private let networkService: NetworkServiceType
-
-    init(networkService: NetworkServiceType) {
-        self.networkService = networkService
-    }
-
-    func loadImage(photo: Photo, resolution: Resolution, completion: @escaping (UIImage?) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-
-            guard let networkService = self?.networkService else {
-                completion(nil)
-                return
-            }
-
-            networkService.getImage(photo: photo, resolution: resolution) {  imageData in
-                DispatchQueue.main.async {
-                    completion(imageData.flatMap(UIImage.init))
-                }
-            }
+  
+  static let placeholder = UIImage(named: "placeholder")
+  
+  private let networkService: NetworkServiceType
+  
+  init(networkService: NetworkServiceType) {
+    self.networkService = networkService
+  }
+  
+  func loadImage(photo: Photo, resolution: Resolution, completion: @escaping (UIImage?) -> Void) {
+    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+      
+      guard let networkService = self?.networkService else {
+        completion(nil)
+        return
+      }
+      
+      networkService.getImage(photo: photo, resolution: resolution) {  imageData in
+        DispatchQueue.main.async {
+          completion(imageData.flatMap(UIImage.init))
         }
+      }
     }
+  }
 }
 

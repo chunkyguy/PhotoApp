@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Photo {
-    var id: Int { get }
-    var title: String { get }
+  var id: Int { get }
+  var title: String { get }
 }
 

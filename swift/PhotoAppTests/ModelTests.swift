@@ -10,37 +10,37 @@
 import XCTest
 
 class ParseTests: XCTestCase {
-    func testIfPhotoModelIsParsed() {
-        guard let data = loadData(file: "photo") else {
-            XCTFail("No data found")
-            return
-        }
-
-        do {
-            let photo = try JSONDecoder().decode(Photo.self, from: data)
-            XCTAssertEqual(photo.id, 2)
-            XCTAssertEqual(photo.title, "reprehenderit est deserunt velit ipsam")
-            XCTAssertEqual(photo.url, "https://via.placeholder.com/600/771796")
-            XCTAssertEqual(photo.thumbnailUrl, "https://via.placeholder.com/150/771796")
-        } catch let error {
-            XCTFail("Parsing failure: \(error)")
-        }
-
+  func testIfPhotoModelIsParsed() {
+    guard let data = loadData(file: "photo") else {
+      XCTFail("No data found")
+      return
     }
-
-    func testIfPhotoListModelIsParsed() {
-        guard let data = loadData(file: "photos") else {
-            XCTFail("No data found")
-            return
-        }
-
-        do {
-            let photoList = try JSONDecoder().decode([Photo].self, from: data)
-            XCTAssertEqual(photoList.count, 2)
-        } catch let error {
-            XCTFail("Parsing failure: \(error)")
-        }
-
+    
+    do {
+      let photo = try JSONDecoder().decode(JSONPlaceholderPhoto.self, from: data)
+      XCTAssertEqual(photo.id, 2)
+      XCTAssertEqual(photo.title, "reprehenderit est deserunt velit ipsam")
+      XCTAssertEqual(photo.url, "https://via.placeholder.com/600/771796")
+      XCTAssertEqual(photo.thumbnailUrl, "https://via.placeholder.com/150/771796")
+    } catch let error {
+      XCTFail("Parsing failure: \(error)")
     }
-
+    
+  }
+  
+  func testIfPhotoListModelIsParsed() {
+    guard let data = loadData(file: "photos") else {
+      XCTFail("No data found")
+      return
+    }
+    
+    do {
+      let photoList = try JSONDecoder().decode([JSONPlaceholderPhoto].self, from: data)
+      XCTAssertEqual(photoList.count, 2)
+    } catch let error {
+      XCTFail("Parsing failure: \(error)")
+    }
+    
+  }
+  
 }

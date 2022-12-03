@@ -10,12 +10,12 @@
 import XCTest
 
 class ListViewControllerTests: BaseSnapshotTest {
-
-    func testIfDefaultLayoutLooksGood() {
-        let max = 10
-        let items = (0..<max).map { StubDetailViewModel(hue: CGFloat($0)/CGFloat(max)) }
-        let viewModel = StubListViewModel(title: "Title", items: items)
-        let viewController = ListViewController(viewModel: viewModel)
-        FBSnapshotVerifyView(viewController.view)
-    }
+  
+  func testIfDefaultLayoutLooksGood() {
+    let max = 10
+    let items = (0..<max).map { StubDetailViewModel(hue: CGFloat($0)/CGFloat(max)) }
+    let viewModel = StubListViewModel(title: "Title", items: items)
+    let viewController = ListViewController(viewModel: viewModel)
+    FBSnapshotVerifyView(viewController.view)
+  }
 }

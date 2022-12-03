@@ -10,10 +10,10 @@
 import XCTest
 
 class DetailViewControllerTests: BaseSnapshotTest {
-
-    func testIfDefaultLayoutLooksGood() {
-        let viewModel = StubDetailViewModel()
-        let viewController = DetailViewController(viewModel: viewModel)
-        FBSnapshotVerifyView(viewController.view)
-    }
+  
+  func testIfDefaultLayoutLooksGood() {
+    let viewModel = StubDetailViewModel()
+    let viewController = DetailViewController(viewModel: viewModel)
+    FBSnapshotVerifyView(viewController.view)
+  }
 }

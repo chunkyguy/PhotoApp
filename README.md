@@ -2,7 +2,7 @@
 
 The goal of the project is to get first hand experience with building the same mobile app with every available tool and compare them.
 
-| Name         | List Screen | Detail Screen | Notes                                                                        |
+| Tool         | List Screen | Detail Screen | Notes                                                                        |
 |--------------|-------------|---------------|------------------------------------------------------------------------------|
 | Swift        | ✅           | ✅             |                                                                              |
 | Objc ARC     | ✅           | ✅             |                                                                              |
