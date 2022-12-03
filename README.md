@@ -2,19 +2,17 @@
 
 The goal of the project is to get first hand experience with building the same mobile app with every available tool and compare them.
 
-### Table
-
-| Name         | List Screen | Detail Screen | Notes |
-|--------------|-------------|---------------|-------|
-| Swift        | ✅           | ✅             |       |
-| Objc ARC     | ✅           | ✅             |       |
-| Objc MRR     | ✅           | ✅             |       |
-| ComponentKit | ✅           | ✅             |       |
-| Flutter      | ✅           | ✅             |       |
-| React Native | ✅           | ❌             |       |
-| Djinni       | ❌           | ❌             |       |
-| Boden        | ❌           | ❌             |       |
-| SwiftUI      | ✅           | ✅             |       |
+| Name         | List Screen | Detail Screen | Notes                                                                        |
+|--------------|-------------|---------------|------------------------------------------------------------------------------|
+| Swift        | ✅           | ✅             |                                                                              |
+| Objc ARC     | ✅           | ✅             |                                                                              |
+| Objc MRR     | ✅           | ✅             |                                                                              |
+| ComponentKit | ✅           | ✅             | https://whackylabs.com/ios/2018/11/09/hello-component-kit/                   |
+| Flutter      | ✅           | ✅             | https://whackylabs.com/flutter/app/cross-platform/2018/12/14/hello-flutter/  |
+| React Native | ✅           | ❌             |                                                                              |
+| Djinni       | ❌           | ❌             | https://whackylabs.com/djinni/cpp/ios/android/2018/11/23/cross-platform-cpp/ |
+| Boden        | ❌           | ❌             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/             |
+| SwiftUI      | ✅           | ✅             |                                                                              |
 
 ### Description
 
