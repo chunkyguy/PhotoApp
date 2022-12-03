@@ -5,8 +5,8 @@ The goal of the project is to get first hand experience with building the same m
 | Tool         | List Screen | Detail Screen | Notes                                                                        |
 |--------------|-------------|---------------|------------------------------------------------------------------------------|
 | Swift        | ✅           | ✅             |                                                                              |
-| Objc ARC     | ✅           | ✅             |                                                                              |
-| Objc MRR     | ✅           | ✅             |                                                                              |
+| ObjC ARC     | ✅           | ✅             |                                                                              |
+| ObjC MRR     | ✅           | ✅             |                                                                              |
 | ComponentKit | ✅           | ✅             | https://whackylabs.com/ios/2018/11/09/hello-component-kit/                   |
 | Flutter      | ✅           | ✅             | https://whackylabs.com/flutter/app/cross-platform/2018/12/14/hello-flutter/  |
 | React Native | ✅           | ❌             |                                                                              |
