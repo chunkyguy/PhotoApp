@@ -22,3 +22,9 @@ struct PhotoDetailView: View {
     }
   }
 }
+
+struct PhotoDetailView_Preview: PreviewProvider {
+  static var previews: some View {
+    PhotoDetailView(photo: Photo.previewData)
+  }
+}

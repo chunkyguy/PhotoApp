@@ -18,6 +18,8 @@
 		79E1347E27C18ADF00705A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E1347D27C18ADF00705A49 /* Assets.xcassets */; };
 		79E1348127C18ADF00705A49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79E1348027C18ADF00705A49 /* Preview Assets.xcassets */; };
 		79E1348A27C191EC00705A49 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E1348927C191EC00705A49 /* AppController.swift */; };
+		E6B3D34E293BABF1007D58AB /* full_600x600.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B3D34D293BABD6007D58AB /* full_600x600.png */; };
+		E6B3D34F293BABF1007D58AB /* thumb_150x150.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B3D34C293BABD6007D58AB /* thumb_150x150.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		79E1347D27C18ADF00705A49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79E1348027C18ADF00705A49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79E1348927C191EC00705A49 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		E6B3D34C293BABD6007D58AB /* thumb_150x150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_150x150.png; sourceTree = "<group>"; };
+		E6B3D34D293BABD6007D58AB /* full_600x600.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = full_600x600.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 		79E1347F27C18ADF00705A49 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				E6B3D34D293BABD6007D58AB /* full_600x600.png */,
+				E6B3D34C293BABD6007D58AB /* thumb_150x150.png */,
 				79E1348027C18ADF00705A49 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -149,6 +155,8 @@
 			files = (
 				79E1348127C18ADF00705A49 /* Preview Assets.xcassets in Resources */,
 				79E1347E27C18ADF00705A49 /* Assets.xcassets in Resources */,
+				E6B3D34E293BABF1007D58AB /* full_600x600.png in Resources */,
+				E6B3D34F293BABF1007D58AB /* thumb_150x150.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

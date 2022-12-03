@@ -26,3 +26,9 @@ struct PhotoListView: View {
     }
   }
 }
+
+struct PhotoListView_Preview: PreviewProvider {
+  static var previews: some View {
+    PhotoListView(photos: [Photo.previewData])
+  }
+}

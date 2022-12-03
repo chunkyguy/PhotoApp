@@ -16,3 +16,9 @@ struct PhotoRootView: View {
     }
   }
 }
+
+struct PhotoRootView_Preview: PreviewProvider {
+  static var previews: some View {
+    PhotoRootView()
+  }
+}
