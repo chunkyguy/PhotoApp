@@ -2,5 +2,5 @@
 
 ### Testing
 
-Run snapshot tests using 11 Pro Max
+Run snapshot tests using XR (16.1)
 
