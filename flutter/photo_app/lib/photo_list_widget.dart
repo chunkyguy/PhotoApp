@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'photo_details_widget.dart';
 import 'photo_list.dart';
 
