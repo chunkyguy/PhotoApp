@@ -7,7 +7,9 @@ struct PhotoTileView: View {
 
   var body: some View {
     AsyncImage(url: URL(string: photo.thumbnailUrl)) { image in
-      image.resizable()
+      image
+        .resizable()
+        .scaledToFit()
     } placeholder: {
       ProgressView()
     }
@@ -16,6 +18,6 @@ struct PhotoTileView: View {
 
 struct PhotoTileView_Preview: PreviewProvider {
   static var previews: some View {
-    PhotoTileView(photo: Photo.previewData)
+    PhotoTileView(photo: Photo.previewPhoto)
   }
 }

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "simplelayoutengine",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/chunkyguy/SimpleLayoutEngine",
+      "state" : {
+        "branch" : "master",
+        "revision" : "555f2e794ada9862b7b914ec869883e7211e5c83"
+      }
+    }
+  ],
+  "version" : 2
+}
