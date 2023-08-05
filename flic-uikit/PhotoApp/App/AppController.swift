@@ -2,8 +2,20 @@
 
 import Foundation
 import UIKit
+import WLKit
 
-struct NetworkController {
+enum AppError: Error {
+  case invalidURL
+  case badNetwork
+  case invalidData
+}
+
+enum AppViewEvent: ViewEvent {
+  case retry
+  case showDetails(Photo)
+}
+
+struct AppController {
 
   private let service: NetworkService
 
@@ -11,7 +23,7 @@ struct NetworkController {
     self.service = service
   }
   
-  func fetchPhotos() async -> Result<[Photo], NetworkError> {
+  func fetchPhotos() async -> Result<[Photo], AppError> {
     guard let url = service.photListURL else {
       return .failure(.invalidURL)
     }
@@ -20,15 +32,21 @@ struct NetworkController {
     return data.flatMap { service.photoList(data: $0) }
   }
   
-  func fetchPhoto(forURL url: URL) async -> UIImage? {
+  func fetchImage(forURL url: String) async -> Result<UIImage, AppError> {
+    guard let url = URL(string: url) else {
+      return .failure(.invalidURL)
+    }
     let data = await data(requestURL: url)
     guard case .success(let photoData) = data else {
-      return nil
+      return .failure(.invalidData)
     }
-    return UIImage(data: $0)
+    guard let image = UIImage(data: photoData) else {
+      return .failure(.invalidData)
+    }
+    return .success(image)
   }
 
-  private func data(requestURL: URL) async -> Result<Data, NetworkError> {
+  private func data(requestURL: URL) async -> Result<Data, AppError> {
     do {
       let (data, _) = try await URLSession.shared.data(for: URLRequest(url: requestURL))
       return .success(data)

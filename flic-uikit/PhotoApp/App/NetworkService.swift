@@ -7,7 +7,7 @@ class NetworkService {
     return URL(string: "https://jsonplaceholder.typicode.com/photos")
   }
 
-  func photoList(data: Data) -> Result<[Photo], NetworkError> {
+  func photoList(data: Data) -> Result<[Photo], AppError> {
     do {
       let photos = try JSONDecoder().decode([Photo].self, from: data)
       return .success(photos)

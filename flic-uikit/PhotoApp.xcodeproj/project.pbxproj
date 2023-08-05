@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E62F81FE293FDBAC002A53BA /* SimpleLayoutEngine in Frameworks */ = {isa = PBXBuildFile; productRef = E62F81FD293FDBAC002A53BA /* SimpleLayoutEngine */; };
-		E62F820029412716002A53BA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62F81FF29412716002A53BA /* RootView.swift */; };
-		E62F82022941280F002A53BA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62F82012941280F002A53BA /* NetworkError.swift */; };
-		E62F820329413472002A53BA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA7288293D309700F54870 /* AsyncImageView.swift */; };
+		E64614BE2A7B048C000FB754 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64614BD2A7B048C000FB754 /* PhotoView.swift */; };
+		E64614C02A7B0A8E000FB754 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64614BF2A7B0A8E000FB754 /* PhotoViewController.swift */; };
+		E64F552F2A79B45000D34223 /* AsyncView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F552E2A79B45000D34223 /* AsyncView.swift */; };
+		E64F55312A79B7F700D34223 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F55302A79B7F700D34223 /* LoadingView.swift */; };
+		E64F55332A79B82B00D34223 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64F55322A79B82B00D34223 /* ErrorView.swift */; };
+		E64F553F2A7B041200D34223 /* WLKit in Frameworks */ = {isa = PBXBuildFile; productRef = E64F553E2A7B041200D34223 /* WLKit */; };
 		E6BA724B293BBEE000F54870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA724A293BBEE000F54870 /* AppDelegate.swift */; };
 		E6BA724D293BBEE000F54870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA724C293BBEE000F54870 /* SceneDelegate.swift */; };
 		E6BA724F293BBEE000F54870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA724E293BBEE000F54870 /* ViewController.swift */; };
@@ -21,7 +23,7 @@
 		E6BA726C293BBEE100F54870 /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA726B293BBEE100F54870 /* PhotoAppUITests.swift */; };
 		E6BA726E293BBEE100F54870 /* PhotoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA726D293BBEE100F54870 /* PhotoAppUITestsLaunchTests.swift */; };
 		E6BA727B293C19DB00F54870 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA727A293C19DB00F54870 /* Photo.swift */; };
-		E6BA727F293C1A2800F54870 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA727C293C1A2800F54870 /* NetworkController.swift */; };
+		E6BA727F293C1A2800F54870 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA727C293C1A2800F54870 /* AppController.swift */; };
 		E6BA7280293C1A2800F54870 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA727D293C1A2800F54870 /* NetworkService.swift */; };
 		E6BA7285293D2E6A00F54870 /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA7284293D2E6A00F54870 /* DataBinding.swift */; };
 		E6BA728B293E7FC400F54870 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BA728A293E7FC400F54870 /* PhotoListView.swift */; };
@@ -45,8 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E62F81FF29412716002A53BA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		E62F82012941280F002A53BA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E64614BD2A7B048C000FB754 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		E64614BF2A7B0A8E000FB754 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		E64F552D2A79B42000D34223 /* WLKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WLKit; path = ../../WLKit; sourceTree = "<group>"; };
+		E64F552E2A79B45000D34223 /* AsyncView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncView.swift; sourceTree = "<group>"; };
+		E64F55302A79B7F700D34223 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		E64F55322A79B82B00D34223 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		E64F553C2A7B03DE00D34223 /* WLKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WLKit; path = ../../WLKit; sourceTree = "<group>"; };
 		E6BA7247293BBEE000F54870 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BA724A293BBEE000F54870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BA724C293BBEE000F54870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +68,9 @@
 		E6BA726B293BBEE100F54870 /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
 		E6BA726D293BBEE100F54870 /* PhotoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6BA727A293C19DB00F54870 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		E6BA727C293C1A2800F54870 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		E6BA727C293C1A2800F54870 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		E6BA727D293C1A2800F54870 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		E6BA7282293C218D00F54870 /* PhotoTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTileView.swift; sourceTree = "<group>"; };
 		E6BA7284293D2E6A00F54870 /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
-		E6BA7286293D302200F54870 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
-		E6BA7288293D309700F54870 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		E6BA728A293E7FC400F54870 /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E62F81FE293FDBAC002A53BA /* SimpleLayoutEngine in Frameworks */,
+				E64F553F2A7B041200D34223 /* WLKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,13 +100,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E64F552C2A79B42000D34223 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E64F552D2A79B42000D34223 /* WLKit */,
+				E64F553C2A7B03DE00D34223 /* WLKit */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		E64F55342A79B93300D34223 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E64F552E2A79B45000D34223 /* AsyncView.swift */,
+				E64F55322A79B82B00D34223 /* ErrorView.swift */,
+				E64F55302A79B7F700D34223 /* LoadingView.swift */,
+				E6BA728A293E7FC400F54870 /* PhotoListView.swift */,
+				E64614BD2A7B048C000FB754 /* PhotoView.swift */,
+				E64614BF2A7B0A8E000FB754 /* PhotoViewController.swift */,
+				E6BA724E293BBEE000F54870 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E64F553A2A79BC9E00D34223 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E6BA727C293C1A2800F54870 /* AppController.swift */,
+				E6BA724A293BBEE000F54870 /* AppDelegate.swift */,
+				E6BA727D293C1A2800F54870 /* NetworkService.swift */,
+				E6BA727A293C19DB00F54870 /* Photo.swift */,
+				E6BA724C293BBEE000F54870 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E64F553B2A79BCC400D34223 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				E6BA7284293D2E6A00F54870 /* DataBinding.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		E64F553D2A7B041200D34223 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6BA723E293BBEE000F54870 = {
 			isa = PBXGroup;
 			children = (
+				E64F552C2A79B42000D34223 /* Packages */,
 				E6BA7249293BBEE000F54870 /* PhotoApp */,
 				E6BA7260293BBEE100F54870 /* PhotoAppTests */,
 				E6BA726A293BBEE100F54870 /* PhotoAppUITests */,
 				E6BA7248293BBEE000F54870 /* Products */,
+				E64F553D2A7B041200D34223 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,23 +175,13 @@
 		E6BA7249293BBEE000F54870 /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
-				E6BA724A293BBEE000F54870 /* AppDelegate.swift */,
-				E6BA724C293BBEE000F54870 /* SceneDelegate.swift */,
-				E6BA724E293BBEE000F54870 /* ViewController.swift */,
-				E62F81FF29412716002A53BA /* RootView.swift */,
-				E6BA7288293D309700F54870 /* AsyncImageView.swift */,
-				E6BA728A293E7FC400F54870 /* PhotoListView.swift */,
-				E6BA7282293C218D00F54870 /* PhotoTileView.swift */,
-				E6BA727A293C19DB00F54870 /* Photo.swift */,
-				E6BA727C293C1A2800F54870 /* NetworkController.swift */,
-				E62F82012941280F002A53BA /* NetworkError.swift */,
-				E6BA727D293C1A2800F54870 /* NetworkService.swift */,
-				E6BA7250293BBEE000F54870 /* Main.storyboard */,
-				E6BA7253293BBEE100F54870 /* Assets.xcassets */,
-				E6BA7255293BBEE100F54870 /* LaunchScreen.storyboard */,
 				E6BA7258293BBEE100F54870 /* Info.plist */,
-				E6BA7286293D302200F54870 /* PhotoDetailView.swift */,
-				E6BA7284293D2E6A00F54870 /* DataBinding.swift */,
+				E6BA7253293BBEE100F54870 /* Assets.xcassets */,
+				E64F553A2A79BC9E00D34223 /* App */,
+				E6BA7255293BBEE100F54870 /* LaunchScreen.storyboard */,
+				E6BA7250293BBEE000F54870 /* Main.storyboard */,
+				E64F553B2A79BCC400D34223 /* Misc */,
+				E64F55342A79B93300D34223 /* Views */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -174,7 +220,7 @@
 			);
 			name = PhotoApp;
 			packageProductDependencies = (
-				E62F81FD293FDBAC002A53BA /* SimpleLayoutEngine */,
+				E64F553E2A7B041200D34223 /* WLKit */,
 			);
 			productName = PhotoApp;
 			productReference = E6BA7247293BBEE000F54870 /* PhotoApp.app */;
@@ -249,7 +295,6 @@
 			);
 			mainGroup = E6BA723E293BBEE000F54870;
 			packageReferences = (
-				E62F81FC293FDBAC002A53BA /* XCRemoteSwiftPackageReference "SimpleLayoutEngine" */,
 			);
 			productRefGroup = E6BA7248293BBEE000F54870 /* Products */;
 			projectDirPath = "";
@@ -294,16 +339,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BA727F293C1A2800F54870 /* NetworkController.swift in Sources */,
+				E64614C02A7B0A8E000FB754 /* PhotoViewController.swift in Sources */,
+				E6BA727F293C1A2800F54870 /* AppController.swift in Sources */,
 				E6BA727B293C19DB00F54870 /* Photo.swift in Sources */,
 				E6BA724F293BBEE000F54870 /* ViewController.swift in Sources */,
+				E64614BE2A7B048C000FB754 /* PhotoView.swift in Sources */,
 				E6BA724B293BBEE000F54870 /* AppDelegate.swift in Sources */,
-				E62F820029412716002A53BA /* RootView.swift in Sources */,
-				E62F820329413472002A53BA /* AsyncImageView.swift in Sources */,
+				E64F55312A79B7F700D34223 /* LoadingView.swift in Sources */,
 				E6BA7280293C1A2800F54870 /* NetworkService.swift in Sources */,
 				E6BA724D293BBEE000F54870 /* SceneDelegate.swift in Sources */,
+				E64F552F2A79B45000D34223 /* AsyncView.swift in Sources */,
 				E6BA7285293D2E6A00F54870 /* DataBinding.swift in Sources */,
-				E62F82022941280F002A53BA /* NetworkError.swift in Sources */,
+				E64F55332A79B82B00D34223 /* ErrorView.swift in Sources */,
 				E6BA728B293E7FC400F54870 /* PhotoListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,22 +694,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		E62F81FC293FDBAC002A53BA /* XCRemoteSwiftPackageReference "SimpleLayoutEngine" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/chunkyguy/SimpleLayoutEngine";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		E62F81FD293FDBAC002A53BA /* SimpleLayoutEngine */ = {
+		E64F553E2A7B041200D34223 /* WLKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E62F81FC293FDBAC002A53BA /* XCRemoteSwiftPackageReference "SimpleLayoutEngine" */;
-			productName = SimpleLayoutEngine;
+			productName = WLKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
