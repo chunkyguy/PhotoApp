@@ -15,12 +15,23 @@ extension Photo {
     return url?.absoluteString ?? "\(filename).\(extn)"
   }
   
-  static var previewData: Photo {
+  static var previewPhoto: Photo {
     return Photo(
       id: 0,
       title: "Test",
       url: fileURL("full_600x600", "png"),
       thumbnailUrl: fileURL("thumb_150x150", "png")
     )
+  }
+  
+  static var previewPhotos: [Photo] {
+    return (0..<5).map {
+      return Photo(
+        id: $0,
+        title: "Test",
+        url: fileURL("full_600x600", "png"),
+        thumbnailUrl: fileURL("thumb_150x150", "png")
+      )
+    }
   }
 }
