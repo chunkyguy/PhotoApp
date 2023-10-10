@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "PhotoApp.app"
-               BlueprintName = "PhotoApp"
-               ReferencedContainer = "container:PhotoApp.xcodeproj">
+               BuildableName = "photoapp.app"
+               BlueprintName = "photoapp"
+               ReferencedContainer = "container:photoapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "PhotoAppTests.xctest"
-               BlueprintName = "PhotoAppTests"
-               ReferencedContainer = "container:PhotoApp.xcodeproj">
+               BuildableName = "photoappTests.xctest"
+               BlueprintName = "photoappTests"
+               ReferencedContainer = "container:photoapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PhotoApp.app"
-            BlueprintName = "PhotoApp"
-            ReferencedContainer = "container:PhotoApp.xcodeproj">
+            BuildableName = "photoapp.app"
+            BlueprintName = "photoapp"
+            ReferencedContainer = "container:photoapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "PhotoApp.app"
-            BlueprintName = "PhotoApp"
-            ReferencedContainer = "container:PhotoApp.xcodeproj">
+            BuildableName = "photoapp.app"
+            BlueprintName = "photoapp"
+            ReferencedContainer = "container:photoapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
