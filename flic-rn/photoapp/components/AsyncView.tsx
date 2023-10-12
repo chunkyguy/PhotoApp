@@ -22,7 +22,7 @@ export default function AsyncView(): JSX.Element {
 
   useEffect(() => {
     // first fetch load enough photos to fill screen
-    // fetch(numOfColumns * 5);
+    fetch(numOfColumns * 5);
   }, []);
 
   if (data.length == 0) {
