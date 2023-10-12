@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
-import {
-  FlatList,
-  Image,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-} from 'react-native';
-import { Colors, Header } from 'react-native/Libraries/NewAppScreen';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import ContentView from './components/ContentView';
 
-const BASE_URI = 'https://source.unsplash.com/random?sig=';
+const styles = StyleSheet.create({
+  background: {
+    backgroundColor: Colors.darker,
+  },
+});
 
 export default function App(): JSX.Element {
   const [data, setData] = useState<Array<number>>([]);
@@ -31,32 +29,7 @@ export default function App(): JSX.Element {
         barStyle={'light-content'}
         backgroundColor={styles.background.backgroundColor}
       />
-      <FlatList
-        style={styles.list}
-        data={data}
-        numColumns={3}
-        onEndReached={fetch}
-        keyExtractor={item => item.toString()}
-        renderItem={({ item }) => (
-          <Image style={styles.item} source={{ uri: BASE_URI + item }} />
-        )}
-      />
+      <ContentView data={data} fetch={fetch} />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  background: {
-    backgroundColor: Colors.darker,
-  },
-  list: {
-    width: '100%',
-    backgroundColor: '#000',
-  },
-  item: {
-    backgroundColor: '#EEE',
-    aspectRatio: 1,
-    width: '100%',
-    flex: 1,
-  },
-});
