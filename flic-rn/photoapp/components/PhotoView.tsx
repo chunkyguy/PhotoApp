@@ -5,9 +5,9 @@ import { Image, StyleSheet } from 'react-native';
 
 const BASE_URI = 'https://source.unsplash.com/random?sig=';
 
-type Props = PropsWithChildren<{
+type Props = {
   itemId: number;
-}>;
+};
 
 const styles = StyleSheet.create({
   style: {

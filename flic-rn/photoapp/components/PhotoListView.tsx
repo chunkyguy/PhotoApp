@@ -1,14 +1,13 @@
 // list of photos
 
 import { FlatList, Image, StyleSheet } from 'react-native';
-import type { PropsWithChildren } from 'react';
 import PhotoView from './PhotoView';
 
-type Props = PropsWithChildren<{
+type Props = {
   numOfColumns: number;
   data: number[];
-  fetch: () => void;
-}>;
+  fetchMore: () => void;
+};
 
 const styles = StyleSheet.create({
   style: {
@@ -17,13 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ContentView(props: Props): JSX.Element {
+export default function PhotoListView(props: Props): JSX.Element {
   return (
     <FlatList
       style={styles.style}
       data={props.data}
       numColumns={props.numOfColumns}
-      onEndReached={props.fetch}
+      onEndReached={props.fetchMore}
       keyExtractor={item => item.toString()}
       renderItem={({ item }) => <PhotoView itemId={item} />}
     />
