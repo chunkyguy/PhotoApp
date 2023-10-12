@@ -1,11 +1,13 @@
 // The main screen
-import { useEffect, useState } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import AsyncView from './components/AsyncView';
 
 const styles = StyleSheet.create({
   style: {
     backgroundColor: '#AAA',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

@@ -1,8 +1,17 @@
 // View with 3 states: loading, error, success
 
 import { useState, useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import PhotoListView from './PhotoListView';
-import { Text } from 'react-native';
+import LoadingView from './LoadingView';
+
+const styles = StyleSheet.create({
+  style: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default function AsyncView(): JSX.Element {
   const numOfColumns = 2;
@@ -26,7 +35,11 @@ export default function AsyncView(): JSX.Element {
   }, []);
 
   if (data.length == 0) {
-    return <Text>"Loading ..."</Text>;
+    return (
+      <View style={styles.style}>
+        <LoadingView />
+      </View>
+    );
   }
 
   if (error.length > 0) {
