@@ -2,11 +2,11 @@
 
 import { FlatList, Image, StyleSheet } from 'react-native';
 import PhotoView from './PhotoView';
+import Photo from '../models/Photo';
 
 type Props = {
   numOfColumns: number;
-  data: number[];
-  fetchMore: () => void;
+  photoList: Photo[];
 };
 
 const styles = StyleSheet.create({
@@ -20,11 +20,10 @@ export default function PhotoListView(props: Props): JSX.Element {
   return (
     <FlatList
       style={styles.style}
-      data={props.data}
+      data={props.photoList}
       numColumns={props.numOfColumns}
-      onEndReached={props.fetchMore}
-      keyExtractor={item => item.toString()}
-      renderItem={({ item }) => <PhotoView itemId={item} />}
+      keyExtractor={item => item.id.toString()}
+      renderItem={({ item }) => <PhotoView photo={item} />}
     />
   );
 }

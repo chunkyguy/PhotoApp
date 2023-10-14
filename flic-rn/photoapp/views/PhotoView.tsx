@@ -1,12 +1,10 @@
 // photo tile
 
-import { PropsWithChildren } from 'react';
 import { Image, StyleSheet } from 'react-native';
-
-const BASE_URI = 'https://source.unsplash.com/random?sig=';
+import Photo from '../models/Photo';
 
 type Props = {
-  itemId: number;
+  photo: Photo;
 };
 
 const styles = StyleSheet.create({
@@ -20,6 +18,6 @@ const styles = StyleSheet.create({
 
 export default function PhotoView(props: Props): JSX.Element {
   return (
-    <Image style={styles.style} source={{ uri: BASE_URI + props.itemId }} />
+    <Image style={styles.style} source={{ uri: props.photo.thumbnailUrl }} />
   );
 }
