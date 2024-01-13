@@ -19,6 +19,18 @@ const styles = StyleSheet.create({
   },
 });
 
+/*
+const kPhoto = {
+  albumId: 1,
+  id: 1,
+  title: 'accusamus beatae ad facilis cum similique qui sunt',
+  url: 'https://via.placeholder.com/600/92c952',
+  thumbnailUrl: 'https://via.placeholder.com/150/92c952',
+};
+
+<DetailsScreen photo={kPhoto} />
+*/
+
 export default function DetailsScreen({photo}) {
   const {title, url} = photo;
   return (

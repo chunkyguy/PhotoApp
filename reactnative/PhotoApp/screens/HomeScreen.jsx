@@ -1,5 +1,6 @@
 import React from 'react';
-import {FlatList, SafeAreaView, StyleSheet, View} from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet} from 'react-native';
+import PhotoList from '../components/PhotoList';
 import PhotoTile from '../components/PhotoTile';
 
 const kPhotoList = [
@@ -49,20 +50,7 @@ const styles = StyleSheet.create({
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={kPhotoList}
-        renderItem={itemInfo => {
-          const {item} = itemInfo;
-          const {title, thumbnailUrl} = item;
-          return <PhotoTile title={title} thumbnailUrl={thumbnailUrl} />;
-        }}
-        keyExtractor={item => {
-          const {id} = item;
-          return id;
-        }}
-        horizontal={false}
-        numColumns={2}
-      />
+      <PhotoList photoList={kPhotoList} />
     </SafeAreaView>
   );
 }
