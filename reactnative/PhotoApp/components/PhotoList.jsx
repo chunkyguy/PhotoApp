@@ -12,17 +12,16 @@ const kPhotoList = [
   },
 ]
 
-<PhotoList photoList={kPhotoList} />
+<PhotoList photoList={kPhotoList} navigation={navigation} />
 */
 
-export default function PhotoList({photoList}) {
+export default function PhotoList({photoList, navigation}) {
   return (
     <FlatList
       data={photoList}
       renderItem={itemInfo => {
         const {item} = itemInfo;
-        const {title, thumbnailUrl} = item;
-        return <PhotoTile title={title} thumbnailUrl={thumbnailUrl} />;
+        return <PhotoTile photo={item} navigation={navigation} />;
       }}
       keyExtractor={item => {
         const {id} = item;

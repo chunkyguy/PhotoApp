@@ -1,7 +1,6 @@
 import React from 'react';
-import {FlatList, SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import PhotoList from '../components/PhotoList';
-import PhotoTile from '../components/PhotoTile';
 
 const kPhotoList = [
   {
@@ -47,10 +46,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.container}>
-      <PhotoList photoList={kPhotoList} />
+      <PhotoList photoList={kPhotoList} navigation={navigation} />
     </SafeAreaView>
   );
 }
