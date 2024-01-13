@@ -9,7 +9,7 @@ The goal of the project is to get first hand experience with building the same m
 | ObjC MRR     | ✅           | ✅             |                                                                              |
 | ComponentKit | ✅           | ✅             | https://whackylabs.com/ios/2018/11/09/hello-component-kit/                   |
 | Flutter      | ✅           | ✅             | https://whackylabs.com/flutter/app/cross-platform/2018/12/14/hello-flutter/  |
-| React Native | ✅           | ❌             |                                                                              |
+| React Native | ✅           | ✅             |                                                                              |
 | Djinni       | ❌           | ❌             | https://whackylabs.com/djinni/cpp/ios/android/2018/11/23/cross-platform-cpp/ |
 | Boden        | ❌           | ❌             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/             |
 | SwiftUI      | ✅           | ✅             |                                                                              |
