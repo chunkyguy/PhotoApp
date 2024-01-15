@@ -17,7 +17,6 @@ export default function App() {
         />
         <Stack.Screen name="Details">
           {props => {
-            console.log(props);
             const {photo} = props.route.params;
             return <DetailsScreen photo={photo} />;
           }}
