@@ -16,3 +16,6 @@ DerivedData
 *.hmap
 *.xccheckout
 Pods/
+
+maui/README.md
+maui/hello-maui
