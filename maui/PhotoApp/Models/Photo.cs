@@ -1,4 +1,4 @@
-﻿namespace PhotoApp;
+﻿namespace PhotoApp.Models;
 
 public class Photo
 {
@@ -7,4 +7,9 @@ public class Photo
     public string title { get; set; }
     public string url { get; set; }
     public string thumbnailUrl { get; set; }
+}
+
+public class PhotoList
+{
+    public Photo[] photos;
 }
