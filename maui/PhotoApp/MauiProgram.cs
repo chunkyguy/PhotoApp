@@ -22,6 +22,7 @@ public static class MauiProgram
 #endif
 		builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainController>();
+
 		builder.Services.AddTransient<DetailsPage>();
 		builder.Services.AddTransient<DetailsController>();
 

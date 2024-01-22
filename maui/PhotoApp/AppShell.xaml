@@ -11,12 +11,4 @@
         Title="Photos"
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
-
-    <!--
-    <ShellContent
-        Title="Details"
-        ContentTemplate="{DataTemplate views:DetailsPage}"
-        Route="DetailsPage" />
-        -->
-
 </Shell>

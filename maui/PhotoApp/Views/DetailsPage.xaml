@@ -4,7 +4,11 @@
              xmlns:models="clr-namespace:PhotoApp.Models"
              xmlns:ctrls="clr-namespace:PhotoApp.Controllers"
              x:Class="PhotoApp.Views.DetailsPage"
-             x:DataType="PhotoApp.Controllers.DetailsController">
+             x:DataType="ctrls:DetailsController"
+             Title="Details" >
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}" TextOverride="Back" />   
+    </Shell.BackButtonBehavior>
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type models:Photo}">

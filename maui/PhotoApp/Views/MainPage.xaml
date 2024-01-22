@@ -4,7 +4,7 @@
              xmlns:models="clr-namespace:PhotoApp.Models"
              xmlns:ctrls="clr-namespace:PhotoApp.Controllers"
              x:Class="PhotoApp.Views.MainPage"
-             x:DataType="PhotoApp.Controllers.MainController">
+             x:DataType="ctrls.MainController">
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type models:Photo}">
