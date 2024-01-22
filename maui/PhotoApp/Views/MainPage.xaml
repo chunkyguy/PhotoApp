@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:PhotoApp.Models"
-             x:Class="PhotoApp.Views.MainPage">
+             xmlns:ctrls="clr-namespace:PhotoApp.Controllers"
+             x:Class="PhotoApp.Views.MainPage"
+             x:DataType="PhotoApp.Controllers.MainController">
     <CollectionView>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type models:Photo}">
@@ -29,7 +31,12 @@
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:Photo">
                 <VerticalStackLayout Padding="8">
-                    <Image Source="{Binding thumbnailUrl}" />
+                    <Image Source="{Binding thumbnailUrl}">
+                        <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+                            Command="{Binding Source={RelativeSource AncestorType={x:Type ctrls:MainController}}, Path=TapCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label 
                         Text="{Binding title}" 
                         HorizontalOptions = "LayoutOptions.CenterAndExpand" />

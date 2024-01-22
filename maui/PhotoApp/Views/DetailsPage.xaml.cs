@@ -1,14 +1,12 @@
+using PhotoApp.Controllers;
+
 namespace PhotoApp.Views;
 
 public partial class DetailsPage : ContentPage
 {
-	public DetailsPage()
+	public DetailsPage(DetailsController controller)
 	{
 		InitializeComponent();
-	}
-
-	private async void LearnMore_Clicked(object sender, EventArgs e)
-	{
-		await Launcher.Default.OpenAsync("https://whackylabs.com");
+		BindingContext = controller;
 	}
 }

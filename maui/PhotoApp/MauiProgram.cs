@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using PhotoApp.Controllers;
+using PhotoApp.Views;
 
 namespace PhotoApp;
 
@@ -18,6 +20,10 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<MainController>();
+		builder.Services.AddTransient<DetailsPage>();
+		builder.Services.AddTransient<DetailsController>();
 
 		return builder.Build();
 	}
