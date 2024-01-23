@@ -29,9 +29,10 @@ public partial class MainController : ObservableObject
     }
 
     [RelayCommand]
-    async Task Tap()
+    async Task Tap(Photo photo)
     {
-        await Shell.Current.GoToAsync(nameof(DetailsPage));
+        var navigationParameter = new Dictionary<string, object> { { "Photo", photo } };
+        await Shell.Current.GoToAsync(nameof(DetailsPage), navigationParameter);
     }
 
     [RelayCommand]
@@ -47,8 +48,8 @@ public partial class MainController : ObservableObject
 
             Photos.Clear();
 
-            // The default photos is a list of 5000 elements .. so we only load first 100
-            for (int i = 0; i < photos.Count && i < 100; i++)
+            // The default photos is a list of 5000 elements .. so we only load first few
+            for (int i = 0; i < photos.Count && i < 10; i++)
                 Photos.Add(photos[i]);
         }
         catch (System.Exception ex)

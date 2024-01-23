@@ -1,6 +1,4 @@
-using PhotoApp.Controllers;
-
-namespace PhotoApp.Views;
+namespace PhotoApp;
 
 public partial class DetailsPage : ContentPage
 {

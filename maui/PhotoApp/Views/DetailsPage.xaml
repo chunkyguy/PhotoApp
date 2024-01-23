@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:PhotoApp.Models"
-             xmlns:ctrls="clr-namespace:PhotoApp.Controllers"
-             x:Class="PhotoApp.Views.DetailsPage"
-             x:DataType="ctrls:DetailsController"
+             xmlns:local="clr-namespace:PhotoApp"
+             x:Class="PhotoApp.DetailsPage"
              Title="Details" >
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding GoBackCommand}" TextOverride="Back" />   
     </Shell.BackButtonBehavior>
-    <CollectionView>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type models:Photo}">
-                <models:Photo
-                    albumId="1"
-                    id="1"
-                    title="accusamus beatae ad facilis cum similique qui sunt"
-                    url="https://via.placeholder.com/600/92c952"
-                    thumbnailUrl="https://via.placeholder.com/150/92c952" />
-            </x:Array>
-        </CollectionView.ItemsSource>
+    <CollectionView ItemsSource="{Binding Photos}">
         <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="models:Photo">
+            <DataTemplate x:DataType="local:Photo">
                 <VerticalStackLayout Padding="8">
                     <Image Source="{Binding url}" />
                     <Label 
