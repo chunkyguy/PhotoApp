@@ -1,6 +1,6 @@
-﻿using PhotoApp.Controllers;
+﻿using System.Diagnostics;
 
-namespace PhotoApp.Views;
+namespace PhotoApp;
 
 public partial class MainPage : ContentPage
 {
@@ -10,4 +10,3 @@ public partial class MainPage : ContentPage
 		BindingContext = controller;
 	}
 }
-

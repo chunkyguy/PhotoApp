@@ -1,4 +1,6 @@
-﻿namespace PhotoApp.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace PhotoApp;
 
 public class Photo
 {
@@ -9,7 +11,7 @@ public class Photo
     public string thumbnailUrl { get; set; }
 }
 
-public class PhotoList
+[JsonSerializable(typeof(List<Photo>))]
+internal sealed partial class PhotoContext : JsonSerializerContext
 {
-    public Photo[] photos;
 }

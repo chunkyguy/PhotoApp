@@ -3,12 +3,12 @@
     x:Class="PhotoApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:PhotoApp.Views"
+    xmlns:local="clr-namespace:PhotoApp"
     Shell.FlyoutBehavior="Disabled"
     Title="Photos">
 
     <ShellContent
         Title="Photos"
-        ContentTemplate="{DataTemplate views:MainPage}"
+        ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 </Shell>

@@ -1,5 +1,4 @@
-﻿using PhotoApp.Views;
-
+﻿
 namespace PhotoApp;
 
 public partial class AppShell : Shell

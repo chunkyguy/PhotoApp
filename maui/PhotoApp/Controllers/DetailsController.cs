@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace PhotoApp.Controllers;
+namespace PhotoApp;
 
 public partial class DetailsController : ObservableObject
 {
