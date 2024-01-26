@@ -13,6 +13,7 @@ The goal of the project is to get first hand experience with building the same m
 | Djinni       | ❌           | ❌             | https://whackylabs.com/djinni/cpp/ios/android/2018/11/23/cross-platform-cpp/                   |
 | Boden        | ❌           | ❌             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/                               |
 | SwiftUI      | ✅           | ✅             |                                                                                                |
+| .NET MAUI    | ✅           | ✅             | https://whackylabs.com/maui/ios/android/2024/01/23/hello-maui/                                 |
 
 ### Description
 
