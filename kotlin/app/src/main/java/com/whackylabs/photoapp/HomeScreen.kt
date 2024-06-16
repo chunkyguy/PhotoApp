@@ -22,13 +22,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.lifecycle.viewmodel.compose.viewModel
-
-import androidx.compose.ui.UiComposable
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
@@ -83,25 +81,6 @@ private fun ErrorScreen(onClick: () -> Unit, modifier: Modifier = Modifier) {
 }
 
 @Composable
-private fun PhotoCard(photo: Photo, modifier: Modifier = Modifier) {
-  Card(
-    modifier = modifier,
-    shape = MaterialTheme.shapes.medium,
-    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-  ) {
-    AsyncImage(
-      model = ImageRequest.Builder(context = LocalContext.current).data(photo.thumbnailUrl)
-        .crossfade(true).build(),
-      contentDescription = photo.title,
-      error = painterResource(id = R.drawable.ic_broken_image),
-      placeholder = painterResource(id = R.drawable.loading_img),
-      contentScale = ContentScale.Crop,
-      modifier = Modifier.fillMaxWidth(),
-    )
-  }
-}
-
-@Composable
 private fun PhotoGridScreen(
   photos: List<Photo>,
   modifier: Modifier = Modifier,
@@ -120,5 +99,24 @@ private fun PhotoGridScreen(
           .aspectRatio(1f)
       )
     }
+  }
+}
+
+@Composable
+private fun PhotoCard(photo: Photo, modifier: Modifier = Modifier) {
+  Card(
+    modifier = modifier,
+    shape = MaterialTheme.shapes.medium,
+    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+  ) {
+    AsyncImage(
+      model = ImageRequest.Builder(context = LocalContext.current).data(photo.thumbnailUrl)
+        .crossfade(true).build(),
+      contentDescription = photo.title,
+      error = painterResource(id = R.drawable.ic_broken_image),
+      placeholder = painterResource(id = R.drawable.loading_img),
+      contentScale = ContentScale.Crop,
+      modifier = Modifier.fillMaxWidth(),
+    )
   }
 }
