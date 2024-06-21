@@ -14,6 +14,7 @@ The goal of the project is to get first hand experience with building the same m
 | Boden        | ❌           | ❌             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/                               |
 | SwiftUI      | ✅           | ✅             |                                                                                                |
 | .NET MAUI    | ✅           | ✅             | https://whackylabs.com/maui/ios/android/2024/01/23/hello-maui/                                 |
+| Kotlin       | ✅           | ❌             |                                                                                                |
 
 ### Description
 
