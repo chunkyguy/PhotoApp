@@ -7,9 +7,16 @@ struct PhotoRootView: View {
   @StateObject var controller = AppController()
 
   var body: some View {
-    NavigationView {
-      PhotoListView(photos: controller.photos)
-        .navigationTitle("Photos")
+    NavigationStack {
+      PhotoContentView(controller.state) {
+        Task {
+          await controller.fetchPhotoList()
+        }
+      }
+      .navigationTitle("Photos")
+      .navigationDestination(for: Photo.self) { photo in
+        PhotoDetailView(photo: photo)
+      }
     }
     .task {
       await controller.fetchPhotoList()
@@ -17,8 +24,6 @@ struct PhotoRootView: View {
   }
 }
 
-struct PhotoRootView_Preview: PreviewProvider {
-  static var previews: some View {
-    PhotoRootView()
-  }
+#Preview {
+  PhotoRootView(controller: AppController.preview)
 }

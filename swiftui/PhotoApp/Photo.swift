@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Photo: Codable, Identifiable {
+struct Photo: Codable, Identifiable, Hashable {
   let id: Int
   let title: String
   let url: String
@@ -15,7 +15,7 @@ extension Photo {
     return url?.absoluteString ?? "\(filename).\(extn)"
   }
   
-  static var previewPhoto: Photo {
+  static var preview: Photo {
     return Photo(
       id: 0,
       title: "Test",
@@ -24,7 +24,7 @@ extension Photo {
     )
   }
   
-  static var previewPhotos: [Photo] {
+  static var previews: [Photo] {
     return (0..<5).map {
       return Photo(
         id: $0,

@@ -15,9 +15,7 @@ struct PhotoListView: View {
     ScrollView {
       LazyVGrid(columns: columns) {
         ForEach(photos) { photo in
-          NavigationLink {
-            PhotoDetailView(photo: photo)
-          } label: {
+          NavigationLink(value: photo) {
             PhotoTileView(photo: photo)
               .frame(width: 150, height: 150)
           }
@@ -27,8 +25,6 @@ struct PhotoListView: View {
   }
 }
 
-struct PhotoListView_Preview: PreviewProvider {
-  static var previews: some View {
-    PhotoListView(photos: Photo.previewPhotos)
-  }
+#Preview {
+  PhotoListView(photos: Photo.previews)
 }

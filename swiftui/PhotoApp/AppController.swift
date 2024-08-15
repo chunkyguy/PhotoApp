@@ -5,18 +5,33 @@ import SwiftUI
 
 @MainActor
 class AppController: ObservableObject {
-  private let networkController = NetworkController()
-
-  @Published var photos: [Photo] = []
-  @Published var isFetching = false
+    
+  enum State {
+    case loading
+    case error
+    case data([Photo])
+  }
+    
+  @Published var state: State = .loading
+  private let networkService: NetworkService
+  
+  init(networkService: NetworkService = NetworkServices.instance) {
+    self.networkService = networkService
+  }
 
   func fetchPhotoList() async {
-    isFetching = true
+    state = .loading
     do {
-      photos = try await networkController.photoList
+      state = .data(try await networkService.photoList)
     } catch let error {
       print("error: \(error)")
+      state = .error
     }
-    isFetching = false
+  }
+}
+
+extension AppController {
+  static var preview: AppController {
+    AppController(networkService: NetworkServices.preview)
   }
 }

@@ -16,8 +16,6 @@ struct PhotoTileView: View {
   }
 }
 
-struct PhotoTileView_Preview: PreviewProvider {
-  static var previews: some View {
-    PhotoTileView(photo: Photo.previewPhoto)
-  }
+#Preview {
+  PhotoTileView(photo: Photo.preview)
 }
