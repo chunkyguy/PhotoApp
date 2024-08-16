@@ -2,7 +2,7 @@ plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.android)
   alias(libs.plugins.compose)
-  kotlin("plugin.serialization") version "2.0.0"
+  alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -81,15 +81,15 @@ dependencies {
   implementation(libs.androidx.lifecycle.runtime.compose)
   implementation(libs.androidx.navigation.compose)
   implementation(libs.androidx.window)
-
   implementation(libs.google.android.material)
+  implementation(libs.androidx.navigation.compose)
+  implementation(libs.kotlinx.serialization.json)
 
   // Retrofit
   implementation(libs.retrofit2.kotlinx.serialization.converter)
   implementation(libs.retrofit)
   implementation(libs.okhttp.v4120)
   implementation(libs.coil.compose.v240)
-  implementation(libs.kotlinx.serialization.json)
 
   androidTestImplementation(libs.junit)
   androidTestImplementation(libs.androidx.test.core)
