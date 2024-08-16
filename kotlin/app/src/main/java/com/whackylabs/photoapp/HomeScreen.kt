@@ -1,51 +1,51 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.whackylabs.photoapp
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import LoadingView
+import PhotoCardView
+import ErrorView
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material3.Button
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.AsyncImage
-import coil.request.ImageRequest
+import androidx.navigation.NavController
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Surface
 
 @Composable
 fun HomeScreen(
+  onSelectPhoto: (Photo) -> Unit,
   viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory),
   modifier: Modifier = Modifier,
   contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
   val state by viewModel.state.collectAsState()
   when (state) {
-    is HomeState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
+    is HomeState.Loading -> LoadingView(modifier = modifier.fillMaxSize())
 
-    is HomeState.Error -> ErrorScreen(
+    is HomeState.Error -> ErrorView(
       onClick = { viewModel.fetchPhotos() },
       modifier = modifier.fillMaxSize()
     )
 
-    is HomeState.Success -> PhotoGridScreen(
+    is HomeState.Success -> HomeSuccessView(
+      onSelectPhoto = onSelectPhoto,
       photos = (state as HomeState.Success).photos,
       modifier = modifier.fillMaxWidth(),
       contentPadding = contentPadding
@@ -54,34 +54,8 @@ fun HomeScreen(
 }
 
 @Composable
-private fun LoadingScreen(modifier: Modifier = Modifier) {
-  Image(
-    modifier = modifier.size(200.dp),
-    painter = painterResource(id = R.drawable.loading_img),
-    contentDescription = "Loading"
-  )
-}
-
-@Composable
-private fun ErrorScreen(onClick: () -> Unit, modifier: Modifier = Modifier) {
-  Column(
-    modifier = modifier,
-    verticalArrangement = Arrangement.Center,
-    horizontalAlignment = Alignment.CenterHorizontally,
-  ) {
-    Image(
-      painter = painterResource(id = R.drawable.ic_connection_error),
-      contentDescription = "Error",
-    )
-    Text(text = "Error. Please try again", modifier = Modifier.padding(16.dp))
-    Button(onClick = { onClick() }) {
-      Text(text = "Retry")
-    }
-  }
-}
-
-@Composable
-private fun PhotoGridScreen(
+private fun HomeSuccessView(
+  onSelectPhoto: (Photo) -> Unit,
   photos: List<Photo>,
   modifier: Modifier = Modifier,
   contentPadding: PaddingValues = PaddingValues(0.dp),
@@ -92,31 +66,17 @@ private fun PhotoGridScreen(
     contentPadding = contentPadding,
   ) {
     items(items = photos, key = { photo -> photo.id }) { photo: Photo ->
-      PhotoCard(
-        photo = photo, modifier = Modifier
-          .padding(4.dp)
-          .fillMaxWidth()
-          .aspectRatio(1f)
-      )
+      Surface(onClick = { onSelectPhoto(photo) }) {
+        PhotoCardView(
+          photoUrl = photo.thumbnailUrl,
+          photoTitle = photo.title,
+          modifier = Modifier
+            .padding(4.dp)
+            .fillMaxWidth()
+            .aspectRatio(1f)
+        )
+      }
     }
   }
 }
 
-@Composable
-private fun PhotoCard(photo: Photo, modifier: Modifier = Modifier) {
-  Card(
-    modifier = modifier,
-    shape = MaterialTheme.shapes.medium,
-    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-  ) {
-    AsyncImage(
-      model = ImageRequest.Builder(context = LocalContext.current).data(photo.thumbnailUrl)
-        .crossfade(true).build(),
-      contentDescription = photo.title,
-      error = painterResource(id = R.drawable.ic_broken_image),
-      placeholder = painterResource(id = R.drawable.loading_img),
-      contentScale = ContentScale.Crop,
-      modifier = Modifier.fillMaxWidth(),
-    )
-  }
-}
