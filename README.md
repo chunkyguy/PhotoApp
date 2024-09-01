@@ -15,6 +15,7 @@ The goal of the project is to get first hand experience with building the same m
 | SwiftUI      | ✅           | ✅             |                                                                                                |
 | .NET MAUI    | ✅           | ✅             | https://whackylabs.com/maui/ios/android/2024/01/23/hello-maui/                                 |
 | Kotlin       | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
+| React        | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 
 ### Description
 
