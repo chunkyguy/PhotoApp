@@ -3,7 +3,7 @@ import 'photo_details_widget.dart';
 import 'photo_list.dart';
 
 class PhotoListWidget extends StatelessWidget {
-  PhotoListWidget({this.photoList});
+  PhotoListWidget({required this.photoList});
 
   @override
   Widget build(BuildContext context) {

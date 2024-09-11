@@ -12,7 +12,8 @@ class AppWidget extends StatelessWidget {
         if (snapshot.hasError) {
           return Text(snapshot.error.toString());
         } else if (snapshot.hasData) {
-          return PhotoListWidget(photoList: snapshot.data);
+          return PhotoListWidget(
+              photoList: snapshot.data ?? PhotoList(items: []));
         } else {
           return Center(child: CircularProgressIndicator());
         }

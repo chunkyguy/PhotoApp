@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'photo_item.dart';
 
 class PhotoList {
-  PhotoList({@required this.items});
+  PhotoList({required this.items});
 
-  factory PhotoList.fromJson({@required List<dynamic> json}) {
-    final list = json.map((itemJson) => PhotoItem.fromJson(json: itemJson) ).toList();
+  factory PhotoList.fromJson({required List<dynamic> json}) {
+    final list =
+        json.map((itemJson) => PhotoItem.fromJson(json: itemJson)).toList();
     return PhotoList(items: list);
   }
 

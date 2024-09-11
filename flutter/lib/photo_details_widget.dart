@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'photo_item.dart';
 
 class PhotoDetailsWidget extends StatelessWidget {
-  PhotoDetailsWidget({@required this.item});
+  PhotoDetailsWidget({required this.item});
 
   @override
   Widget build(BuildContext context) {
