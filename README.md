@@ -15,7 +15,7 @@ The goal of the project is to get first hand experience with building the same m
 | jetpack-compose | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 | react           | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 | ionic           | ✅           | ✅             | https://whackylabs.com/js/ionic/ios/android/2024/09/06/hello-ionic/                            |
-| android         | ✅           | ✅             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/                               |
+| android         | ✅           | ✅             | https://whackylabs.com/kotlin/xml/android/2024/12/28/android-xml/                              |
 | djinni          | ❌           | ❌             | https://whackylabs.com/djinni/cpp/ios/android/2018/11/23/cross-platform-cpp/                   |
 | boden           | ❌           | ❌             | https://whackylabs.com/x-platform/cpp/2019/06/01/cpp-x-platform/                               |
 
