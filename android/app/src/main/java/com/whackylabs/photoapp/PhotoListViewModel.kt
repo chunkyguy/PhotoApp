@@ -13,6 +13,7 @@ class PhotoListViewModel : ViewModel() {
         data class Content(val photos: List<Photo>) : State()
     }
 
+    private val networkService = NetworkService()
     private val _state = MutableStateFlow<State>(State.Loading)
     val state: StateFlow<State> = _state
 
@@ -20,10 +21,7 @@ class PhotoListViewModel : ViewModel() {
         viewModelScope.launch {
             _state.value = State.Loading
             try {
-                val photos = NetworkService
-                    .api()
-                    .photos()
-                    .body() ?: emptyList()
+                val photos = networkService.photos()
                 _state.value = State.Content(photos)
             } catch (e: Exception) {
                 val message = e.message ?: "Something went wrong"

@@ -1,36 +1,20 @@
 package com.whackylabs.photoapp
 
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-
-interface API {
-    @GET("photos")
-    suspend fun photos(): Response<List<Photo>>
-}
+import io.ktor.client.HttpClient
+import io.ktor.client.call.body
+import io.ktor.client.engine.android.Android
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.request.get
+import io.ktor.serialization.kotlinx.json.json
 
 class NetworkService {
-    companion object {
-        fun api(): API {
-            val loggingInterceptor = HttpLoggingInterceptor()
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+    private val client = HttpClient(Android) {
+        install(ContentNegotiation) { json() }
+    }
 
-            val okHttpClient = OkHttpClient
-                .Builder()
-                .addInterceptor(loggingInterceptor)
-                .build()
-
-            val retrofit = Retrofit
-                .Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build()
-
-            return retrofit.create(API::class.java)
-        }
+    suspend fun photos(): List<Photo> {
+        return client
+            .get("https://jsonplaceholder.typicode.com/photos")
+            .body()
     }
 }

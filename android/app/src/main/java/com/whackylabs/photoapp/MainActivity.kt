@@ -13,6 +13,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         gridVw.setOnItemClickListener { _, _, position, _ ->
             val photo = photos[position]
             startActivity(Intent(this, DetailsActivity::class.java).apply {
-                putExtra("photo", photo)
+                putExtra("photo", Json.encodeToString(photo))
             })
         }
 

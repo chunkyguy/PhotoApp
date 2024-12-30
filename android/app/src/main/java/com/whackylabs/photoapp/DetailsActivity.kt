@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
+import kotlinx.serialization.json.Json
 
 class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,8 @@ class DetailsActivity : AppCompatActivity() {
             insets
         }
 
-        val photo = intent.getSerializableExtra("photo") as Photo
+        val photoStr = intent.getStringExtra("photo") as String
+        val photo = Json.decodeFromString<Photo>(photoStr)
 
         val imageVw: ImageView = findViewById(R.id.imageVw)
         val textVw: TextView = findViewById(R.id.textVw)
@@ -33,5 +35,6 @@ class DetailsActivity : AppCompatActivity() {
             )
             .into(imageVw)
         textVw.text = photo.title ?: "-"
+        textVw.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
     }
 }

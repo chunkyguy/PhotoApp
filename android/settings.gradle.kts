@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PhotoApp"
 include(":app")
+ 
