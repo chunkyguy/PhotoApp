@@ -18,7 +18,7 @@ struct PhotoGridView: View {
       LazyVGrid(columns: columns) {
         ForEach(photos, id: \.id) { photo in
           NavigationLink(value: photo) {
-            PhotoCardView(photo)
+            PhotoCardView(photoUrl: photo.thumbnailUrl, photoTitle: nil)
               .frame(width: 150, height: 150)
           }
         }

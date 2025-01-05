@@ -15,7 +15,10 @@ struct ContentView: View {
       PhotoGridView(photos)
         .navigationTitle("Photos")
         .navigationDestination(for: Photo.self) { photo in
-          Text(photo.description())
+          PhotoCardView(
+            photoUrl: photo.url,
+            photoTitle: photo.title
+          )
         }
     }
     .task {
