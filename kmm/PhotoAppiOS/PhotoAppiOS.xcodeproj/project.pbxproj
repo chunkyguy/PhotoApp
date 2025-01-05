@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
-		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
-		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		E690C3B92D25C3ED00F7C5A1 /* PhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E690C3B82D25C3ED00F7C5A1 /* PhotoCardView.swift */; };
-		E690C3BB2D25C42100F7C5A1 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E690C3BA2D25C42100F7C5A1 /* PhotoGridView.swift */; };
+		E683436F2D2ADDB00024C2DF /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683436B2D2ADDB00024C2DF /* PhotoGridView.swift */; };
+		E68343702D2ADDB00024C2DF /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683436C2D2ADDB00024C2DF /* iOSApp.swift */; };
+		E68343712D2ADDB00024C2DF /* PhotoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683436D2D2ADDB00024C2DF /* PhotoCardView.swift */; };
+		E68343722D2ADDB00024C2DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683436E2D2ADDB00024C2DF /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +31,12 @@
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		7555FF7B242A565900829871 /* PhotoAppApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7555FF7B242A565900829871 /* PhotoAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E690C3B82D25C3ED00F7C5A1 /* PhotoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCardView.swift; sourceTree = "<group>"; };
-		E690C3BA2D25C42100F7C5A1 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		E683436B2D2ADDB00024C2DF /* PhotoGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		E683436C2D2ADDB00024C2DF /* iOSApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		E683436D2D2ADDB00024C2DF /* PhotoCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCardView.swift; sourceTree = "<group>"; };
+		E683436E2D2ADDB00024C2DF /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
-				7555FF7D242A565900829871 /* PhotoAppApple */,
+				7555FF7D242A565900829871 /* PhotoAppiOS */,
 				7555FF7C242A565900829871 /* Products */,
 				7555FFB0242A642200829871 /* Frameworks */,
 			);
@@ -70,23 +70,20 @@
 		7555FF7C242A565900829871 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7555FF7B242A565900829871 /* PhotoAppApple.app */,
+				7555FF7B242A565900829871 /* PhotoAppiOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7555FF7D242A565900829871 /* PhotoAppApple */ = {
+		7555FF7D242A565900829871 /* PhotoAppiOS */ = {
 			isa = PBXGroup;
 			children = (
 				7555FF8C242A565B00829871 /* Info.plist */,
-				7555FF82242A565900829871 /* ContentView.swift */,
-				2152FB032600AC8F00CF470E /* iOSApp.swift */,
-				E690C3B82D25C3ED00F7C5A1 /* PhotoCardView.swift */,
-				E690C3BA2D25C42100F7C5A1 /* PhotoGridView.swift */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				E683436A2D2ADDB00024C2DF /* Sources */,
 			);
-			path = PhotoAppApple;
+			path = PhotoAppiOS;
 			sourceTree = "<group>";
 		};
 		7555FFB0242A642200829871 /* Frameworks */ = {
@@ -96,12 +93,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E683436A2D2ADDB00024C2DF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E683436E2D2ADDB00024C2DF /* ContentView.swift */,
+				E683436C2D2ADDB00024C2DF /* iOSApp.swift */,
+				E683436D2D2ADDB00024C2DF /* PhotoCardView.swift */,
+				E683436B2D2ADDB00024C2DF /* PhotoGridView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7555FF7A242A565900829871 /* PhotoAppApple */ = {
+		7555FF7A242A565900829871 /* PhotoAppiOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "PhotoAppApple" */;
+			buildConfigurationList = 7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "PhotoAppiOS" */;
 			buildPhases = (
 				7555FFB5242A651A00829871 /* ShellScript */,
 				7555FF77242A565900829871 /* Sources */,
@@ -113,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = PhotoAppApple;
-			productName = PhotoAppApple;
-			productReference = 7555FF7B242A565900829871 /* PhotoAppApple.app */;
+			name = PhotoAppiOS;
+			productName = PhotoAppiOS;
+			productReference = 7555FF7B242A565900829871 /* PhotoAppiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "PhotoAppApple" */;
+			buildConfigurationList = 7555FF76242A565900829871 /* Build configuration list for PBXProject "PhotoAppiOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7555FF7A242A565900829871 /* PhotoAppApple */,
+				7555FF7A242A565900829871 /* PhotoAppiOS */,
 			);
 		};
 /* End PBXProject section */
@@ -179,7 +187,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export JAVA_HOME=\"/opt/homebrew/opt/openjdk\"\n\ncd \"$SRCROOT/..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "export JAVA_HOME=\"/opt/homebrew/opt/openjdk\"\n\ncd \"$SRCROOT/..\"\n./gradlew :PhotoKit:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -188,10 +196,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E690C3B92D25C3ED00F7C5A1 /* PhotoCardView.swift in Sources */,
-				E690C3BB2D25C42100F7C5A1 /* PhotoGridView.swift in Sources */,
-				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				E68343712D2ADDB00024C2DF /* PhotoCardView.swift in Sources */,
+				E683436F2D2ADDB00024C2DF /* PhotoGridView.swift in Sources */,
+				E68343722D2ADDB00024C2DF /* ContentView.swift in Sources */,
+				E68343702D2ADDB00024C2DF /* iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,13 +327,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"PhotoAppApple/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PhotoAppiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../PhotoKit/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
-				INFOPLIST_FILE = PhotoAppApple/Info.plist;
+				INFOPLIST_FILE = PhotoAppiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -334,9 +342,9 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					shared,
+					PhotoKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.PhotoAppApple;
+				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.PhotoAppiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -348,13 +356,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"PhotoAppApple/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PhotoAppiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../shared/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
+					"$(SRCROOT)/../PhotoKit/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)",
 				);
-				INFOPLIST_FILE = PhotoAppApple/Info.plist;
+				INFOPLIST_FILE = PhotoAppiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -363,9 +371,9 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
-					shared,
+					PhotoKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.PhotoAppApple;
+				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.PhotoAppiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,7 +383,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7555FF76242A565900829871 /* Build configuration list for PBXProject "PhotoAppApple" */ = {
+		7555FF76242A565900829871 /* Build configuration list for PBXProject "PhotoAppiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7555FFA3242A565B00829871 /* Debug */,
@@ -384,7 +392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "PhotoAppApple" */ = {
+		7555FFA5242A565B00829871 /* Build configuration list for PBXNativeTarget "PhotoAppiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7555FFA6242A565B00829871 /* Debug */,

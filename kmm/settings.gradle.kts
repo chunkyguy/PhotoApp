@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PhotoApp"
 include(":PhotoAppAndroid")
-include(":shared")
+include(":PhotoKit")

@@ -1,5 +1,5 @@
 import SwiftUI
-import shared
+import PhotoKit
 
 struct ContentView: View {
   
