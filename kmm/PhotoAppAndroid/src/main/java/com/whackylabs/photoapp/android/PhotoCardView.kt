@@ -1,9 +1,11 @@
 package com.whackylabs.photoapp.android
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -16,16 +18,19 @@ fun PhotoCardView(
   photoTitle: String?,
   modifier: Modifier = Modifier
 ) {
-  Card(
-    modifier = modifier,
-    shape = MaterialTheme.shapes.medium,
-    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-  ) {
-    AsyncImage(
-      model = photoUrl,
-      contentDescription = photoTitle,
-      contentScale = ContentScale.Crop,
-      modifier = Modifier.fillMaxWidth(),
-    )
+  Column {
+    Card(
+      modifier = modifier,
+      shape = MaterialTheme.shapes.medium,
+      elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    ) {
+      AsyncImage(
+        model = photoUrl,
+        contentDescription = photoTitle,
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.fillMaxWidth(),
+      )
+    }
+    Text(photoTitle ?: "")
   }
 }

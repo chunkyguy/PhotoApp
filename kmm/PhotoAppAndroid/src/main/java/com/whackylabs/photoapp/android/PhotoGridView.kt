@@ -29,7 +29,7 @@ fun PhotoGridView(
       Surface(onClick = { onSelectPhoto(photo) }) {
         PhotoCardView(
           photoUrl = photo.thumbnailUrl,
-          photoTitle = photo.title,
+          photoTitle = null,
           modifier = Modifier
             .padding(4.dp)
             .fillMaxWidth()
