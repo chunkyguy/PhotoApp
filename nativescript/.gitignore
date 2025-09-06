@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+platforms
+lib
+hooks
+dist
+*.js
+*.map
+*.log
