@@ -4,6 +4,5 @@ platforms
 lib
 hooks
 dist
-*.js
 *.map
 *.log

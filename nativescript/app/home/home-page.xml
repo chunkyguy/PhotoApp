@@ -1,5 +1,10 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
-  <ActionBar title="Photos" />
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="Photos">
+    <ActionItem
+      text="Refresh"
+      tap="onRefresh"
+    />
+  </ActionBar>
   <StackLayout height="100%">
     <ListView
       height="100%"
@@ -18,7 +23,13 @@
           margin="5 10"
           padding="0"
         >
-          <Image row="0" margin="0" stretch="aspectFill" src="{{ download_url }}" />
+          <Image
+            row="0"
+            margin="0"
+            stretch="aspectFill"
+            src="{{ download_url }}"
+            backgroundColor="grey"
+          />
           <Label
             row="1"
             margin="10 10 0 10"

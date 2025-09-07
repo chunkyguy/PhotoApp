@@ -49,5 +49,190 @@ No issues were detected.
 
 ![Set up](/screenshots/00-setup.png)
 
-### Home screen
+### UI
 
+Native script works with a 2 way binding between the UI described in xml files and the corresponding view model written in javascript. 
+
+The minimal example would be to create a `sample-page.xml` and a corresponding `sample-page.js`:
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Sample" />
+    <StackLayout class="p-20">
+        <Label text="{{ message }}" class="h2 text-center" textWrap="true" />
+        <Button text="Tap here" tap="{{ onTap }}" class="-primary" />
+    </StackLayout>
+</Page>
+```
+
+```js
+import { Observable } from "@nativescript/core";
+
+function createViewModel() {
+  const viewModel = new Observable();
+  viewModel.message = "Hello world!"
+  return viewModel;
+}
+
+export function navigatingTo(args) {
+  const page = args.object;
+  page.bindingContext = createViewModel();
+}
+```
+ 
+In this example the UI invokes the `navigatingTo()` whenever the page is rendered for the first time where can create our view model as an `Observable` type and pass it back to the UI as `bindingContext`.
+
+Based on this information, if we mock a `PhotoService` as:
+
+```js
+photos = [
+    {
+      id: "37",
+      author: "Austin Neill",
+      width: 2000,
+      height: 1333,
+      url: "https://unsplash.com/photos/erTjj730fMk",
+      download_url: "https://picsum.photos/id/37/2000/1333",
+    },
+    /* ... */
+];
+
+export function getPhotos() {
+  return photos;
+}
+
+export function getPhotoById(id) {
+  return photos.find((it) => it.id === id) || undefined;
+}
+```
+
+Then we can create our `home-page` as:
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <ActionBar title="Photos" />
+  <StackLayout height="100%">
+    <ListView
+      height="100%"
+      separatorColor="transparent"
+      items="{{ photos }}"
+      itemTap="{{ onPhotoTap }}"
+      margin="10"
+    >
+      <ListView.itemTemplate>
+        <GridLayout
+          height="280"
+          borderRadius="10"
+          class="bg-secondary"
+          rows="*, auto, auto"
+          columns="*"
+          margin="5 10"
+          padding="0"
+        >
+          <Image
+            row="0"
+            margin="0"
+            stretch="aspectFill"
+            src="{{ download_url }}"
+            backgroundColor="grey"
+          />
+          <Label
+            row="1"
+            margin="10 10 0 10"
+            fontWeight="400"
+            class="text-primary"
+            fontSize="18"
+            text="{{ author }}"
+          />
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
+</Page>
+```
+
+```js
+import { Frame, Observable, ObservableArray } from "@nativescript/core";
+import * as PhotoService from "../services/photos.service";
+
+function createViewModel() {
+  const viewModel = new Observable();
+  viewModel.photos = PhotosService.getPhotos();
+  viewModel.onPhotoTap = (args) => { /* TODO */ };
+  return viewModel;
+}
+
+export function navigatingTo(args) {
+  if (args.isBackNavigation) {
+    return;
+  }
+
+  const page = args.object;
+  page.bindingContext = createViewModel();
+}
+```
+
+![Home](/screenshots/01-home.png)
+
+And our details page as:
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="{{ photo.author }}" />
+     <StackLayout class="p-20">
+        <Image src="{{ photo.download_url}}" />
+        <Label text="{{ photo.url }}" class="caption text-center" textWrap="true" />
+    </StackLayout>
+</Page>
+```
+
+```js
+import { Observable } from "@nativescript/core";
+import * as PhotoService from "../services/photos.service";
+
+function createViewModel() {
+  const viewModel = new Observable();
+  viewModel.photo = PhotosService.getPhotoById("42");
+  return viewModel;
+}
+
+export function navigatingTo(args) {
+  const page = args.object;
+  page.bindingContext = createViewModel();
+}
+```
+
+![Details](/screenshots/02-details.png)
+
+### Navigation
+
+To navigate from home to details page we need update our `home-page.js` to:
+
+```js
+  viewModel.onPhotoTap = (args) => {
+    Frame.topmost().navigate({
+      moduleName: "details/details-page",
+      context: { photoId: viewModel.photos[args.index].id },
+    });
+  };
+```
+
+And then the `details-page.js` to parse the `photoId`
+
+```js
+function createViewModel(args) {
+  const viewModel = new Observable();
+  viewModel.photo = PhotoService.getPhotoById(args.photoId);
+
+  viewModel.onRefresh = () => {
+    viewModel.set("photo", PhotoService.getPhotoById(args.photoId));
+  };
+
+  return viewModel;
+}
+
+export function onNavigatingTo(args) {
+  const page = args.object;
+  page.bindingContext = createViewModel(page.navigationContext);
+}
+```

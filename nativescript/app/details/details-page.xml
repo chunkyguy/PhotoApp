@@ -1,6 +1,6 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
-    <ActionBar title="{{ photo.author }}" />
-     <StackLayout class="p-20">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ photo.author }}"></ActionBar>
+    <StackLayout class="p-20" height="280">
         <Image src="{{ photo.download_url}}" />
         <Label text="{{ photo.url }}" class="caption text-center" textWrap="true" />
     </StackLayout>
