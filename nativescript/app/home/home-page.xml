@@ -1,0 +1,34 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+  <ActionBar title="Photos" />
+  <StackLayout height="100%">
+    <ListView
+      height="100%"
+      separatorColor="transparent"
+      items="{{ photos }}"
+      itemTap="{{ onPhotoTap }}"
+      margin="10"
+    >
+      <ListView.itemTemplate>
+        <GridLayout
+          height="280"
+          borderRadius="10"
+          class="bg-secondary"
+          rows="*, auto, auto"
+          columns="*"
+          margin="5 10"
+          padding="0"
+        >
+          <Image row="0" margin="0" stretch="aspectFill" src="{{ download_url }}" />
+          <Label
+            row="1"
+            margin="10 10 0 10"
+            fontWeight="400"
+            class="text-primary"
+            fontSize="18"
+            text="{{ author }}"
+          />
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
+</Page>

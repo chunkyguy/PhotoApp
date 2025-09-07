@@ -48,3 +48,6 @@ No issues were detected.
 5. Run `ns run ios`
 
 ![Set up](/screenshots/00-setup.png)
+
+### Home screen
+
