@@ -1,45 +1,52 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-  <ActionBar title="Photos">
-    <ActionItem
-      text="Refresh"
-      tap="onRefresh"
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  navigatingTo="onNavigatingTo"
+  navigatedTo="onNavigatedTo"
+>
+  <ActionBar title="Photos" />
+  <GridLayout height="100%" rows="*" columns="*">
+    <ActivityIndicator
+      busy="true"
+      visibility="{{ loadingVisibility }}"
+      row="0"
     />
-  </ActionBar>
-  <StackLayout height="100%">
-    <ListView
-      height="100%"
-      separatorColor="transparent"
-      items="{{ photos }}"
-      itemTap="{{ onPhotoTap }}"
-      margin="10"
-    >
-      <ListView.itemTemplate>
-        <GridLayout
-          height="280"
-          borderRadius="10"
-          class="bg-secondary"
-          rows="*, auto, auto"
-          columns="*"
-          margin="5 10"
-          padding="0"
-        >
-          <Image
-            row="0"
-            margin="0"
-            stretch="aspectFill"
-            src="{{ download_url }}"
-            backgroundColor="grey"
-          />
-          <Label
-            row="1"
-            margin="10 10 0 10"
-            fontWeight="400"
-            class="text-primary"
-            fontSize="18"
-            text="{{ author }}"
-          />
-        </GridLayout>
-      </ListView.itemTemplate>
-    </ListView>
-  </StackLayout>
+    <StackLayout height="100%" row="0">
+      <ListView
+        height="100%"
+        separatorColor="transparent"
+        items="{{ photos }}"
+        itemTap="{{ onPhotoTap }}"
+        margin="10"
+      >
+        <ListView.itemTemplate>
+          <GridLayout
+            height="280"
+            borderRadius="10"
+            class="bg-secondary"
+            rows="*, auto, auto"
+            columns="*"
+            margin="5 10"
+            padding="0"
+          >
+            <Image
+              row="0"
+              margin="0"
+              stretch="aspectFill"
+              src="{{ download_url }}"
+              backgroundColor="grey"
+            />
+            <Label
+              row="1"
+              margin="10 10 0 10"
+              fontWeight="400"
+              class="text-primary"
+              fontSize="18"
+              text="{{ author }}"
+            />
+          </GridLayout>
+        </ListView.itemTemplate>
+      </ListView>
+    </StackLayout>
+
+  </GridLayout>
 </Page>

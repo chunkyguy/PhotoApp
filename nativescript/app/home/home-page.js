@@ -1,13 +1,10 @@
 import { Frame, Observable, ObservableArray } from "@nativescript/core";
 import * as PhotoService from "../services/photos.service";
 
-function createViewModel() {
+async function createViewModel() {
   const viewModel = new Observable();
-  viewModel.photos = PhotoService.getPhotos();
-
-  viewModel.onRefresh = () => {
-    viewModel.set("photos", PhotoService.getPhotos());
-  };
+  viewModel.loadingVisibility = "hidden";
+  viewModel.photos = await PhotoService.getPhotos();
 
   viewModel.onPhotoTap = (args) => {
     Frame.topmost().navigate({
@@ -23,7 +20,15 @@ export function onNavigatingTo(args) {
   if (args.isBackNavigation) {
     return;
   }
-
   const page = args.object;
-  page.bindingContext = createViewModel();
+  page.bindingContext = {
+    loadingVisibility: "visible",
+    photos: [],
+    onPhotoTap: null,
+  };
+}
+
+export async function onNavigatedTo(args) {
+  const page = args.object;
+  page.bindingContext = await createViewModel();
 }

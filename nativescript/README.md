@@ -236,3 +236,106 @@ export function onNavigatingTo(args) {
   page.bindingContext = createViewModel(page.navigationContext);
 }
 ```
+
+### Networking
+
+The final piece in the puzzle is fetching the data from the internet. That means updating our `PhotoService` to `async`
+
+```js
+async function getData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    return null;
+  }
+}
+
+export async function getPhotos() {
+  return await getData("https://picsum.photos/v2/list?page=2");
+}
+
+export async function getPhotoById(id) {
+  return await getData(`https://picsum.photos/id/${id}/info`);
+}
+```
+
+And then bubbling up the `async` calls to the view models layer
+
+```js
+export async function onNavigatingTo(args) {
+  // ...
+  const page = args.object;
+  page.bindingContext = await createViewModel();
+}
+
+async function createViewModel() {
+  const viewModel = new Observable();
+  viewModel.photos = await PhotoService.getPhotos();
+  // ...
+  return viewModel;
+}
+```
+
+Since the data is now coming via a network call. So we need to add a loading state to the app. This means two things. First  we need to update our home page to have a loading indicator.
+
+```xml
+<Page xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ActionBar title="Photos" />
+  <GridLayout height="100%" rows="*" columns="*">
+    <ActivityIndicator
+      busy="true"
+      visibility="{{ loadingVisibility }}"
+      row="0"
+    />
+    <StackLayout height="100%" row="0">
+      <!-- ... -->
+    </StackLayout>
+
+  </GridLayout>
+</Page>
+```
+
+And second, we need to update our view model to handle both `navigatingTo` and `navigatedTo`
+```xml
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  navigatingTo="onNavigatingTo"
+  navigatedTo="onNavigatedTo"
+>
+  <!--  -->
+</Page>
+```
+
+```js
+export function onNavigatingTo(args) {
+  if (args.isBackNavigation) {
+    return;
+  }
+  const page = args.object;
+  page.bindingContext = {
+    loadingVisibility: "visible",
+    photos: [],
+    onPhotoTap: null,
+  };
+}
+
+export async function onNavigatedTo(args) {
+  const page = args.object;
+  page.bindingContext = await createViewModel();
+}
+
+async function createViewModel() {
+  const viewModel = new Observable();
+  viewModel.loadingVisibility = "hidden";
+  viewModel.photos = await PhotoService.getPhotos();
+  // ...
+  return viewModel;
+}
+```
+
+![Loading state](/screenshots/03-loading.gif)
