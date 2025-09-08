@@ -1,0 +1,19 @@
+{
+  "name": "photo-app",
+  "main": "app/app.js",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nativescript-community/ui-collectionview-alignedflowlayout": "^6.0.4",
+    "@nativescript/core": "~8.9.0",
+    "@nativescript/theme": "^3.1.0"
+  },
+  "devDependencies": {
+    "@nativescript/ios": "8.9.2",
+    "@nativescript/webpack": "~5.0.0"
+  },
+  "scripts": {
+    "ios": "ns run ios",
+    "android": "ns run android"
+  }
+}

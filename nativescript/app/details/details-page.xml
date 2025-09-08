@@ -1,0 +1,12 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="{{ photo.author }}"></ActionBar>
+    <StackLayout class="p-20" height="100%">
+        <Image
+            src="{{ photo.download_url}}"
+            height="280"
+            margin="0"
+            stretch="aspectFill"
+            backgroundColor="grey" />
+        <Label text="{{ photo.url }}" class="caption text-center" textWrap="true" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,34 @@
+<!-- test-page.xml -->
+
+<Page
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:gv="@nativescript-community/ui-collectionview"
+  navigatingTo="onNavigatingTo"
+  navigatedTo="onNavigatedTo"
+>
+  <ActionBar title="Photos" />
+  <GridLayout height="100%" rows="*" columns="*">
+    <ActivityIndicator
+      busy="true"
+      visibility="{{ loadingVisibility }}"
+      row="0"
+    />
+    <gv:CollectionView
+      row="0"
+      items="{{photos}}"
+      itemTap="{{ onPhotoTap }}"
+      colWidth="50%"
+      rowHeight="150"
+    >
+      <gv:CollectionView.itemTemplate>
+        <Image
+          row="0"
+          margin="8"
+          stretch="aspectFill"
+          src="{{ download_url }}"
+          backgroundColor="grey"
+        />
+      </gv:CollectionView.itemTemplate>
+    </gv:CollectionView>
+  </GridLayout>
+</Page>
