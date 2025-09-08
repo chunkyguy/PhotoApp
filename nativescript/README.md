@@ -339,3 +339,37 @@ async function createViewModel() {
 ```
 
 ![Loading state](/screenshots/03-loading.gif)
+
+### Two column grid
+And next lets make the UI a 2 column grid. Surprisingly, the official API does not provide anything out of the box and the recommended way is to use a community plugin `ui-collectionview-alignedflowlayout`.  So that means we need update our `package.json` to:
+
+```json
+"dependencies": {
+    "@nativescript-community/ui-collectionview-alignedflowlayout": "^6.0.4",
+}
+```
+
+And then to configure the plugin we need to update the `app.js`
+
+```js
+import install from "@nativescript-community/ui-collectionview-alignedflowlayout";
+install();
+```
+
+And then we can finally update the UI in `home-page.xml` to:
+
+```xml
+<gv:CollectionView row="0" items="{{photos}}" colWidth="50%" rowHeight="150">
+    <gv:CollectionView.itemTemplate>
+      <Image
+        row="0"
+        margin="8"
+        stretch="aspectFill"
+        src="{{ download_url }}"
+        backgroundColor="grey"
+      />
+  </gv:CollectionView.itemTemplate>
+</gv:CollectionView>
+```
+
+![grid view](/screenshots/04-grid.png)

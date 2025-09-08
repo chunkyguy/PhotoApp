@@ -11,8 +11,12 @@ async function getData(url) {
   }
 }
 
+function randomPage() {
+  return Math.floor(Math.random() * 10);
+}
+
 export async function getPhotos() {
-  return await getData("https://picsum.photos/v2/list?page=2");
+  return await getData(`https://picsum.photos/v2/list?page=${randomPage()}`);
 }
 
 export async function getPhotoById(id) {
