@@ -14,6 +14,7 @@ The goal of the project is to get first hand experience with building the same m
 | ionic                 | ✅           | ✅             | https://whackylabs.com/js/ionic/ios/android/2024/09/06/hello-ionic/                            |
 | jetpack-compose       | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 | kmm                   | ✅           | ✅             | https://whackylabs.com/swift/kotlin/kmm/2025/01/05/hello-kotlin-multiplatform/                 |
+| native-script         | ✅           | ✅             | https://whackylabs.com/js/nativescript/appdev/2025/09/08/hello-nativescript/                   |
 | react                 | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 | react-native          | ✅           | ✅             | https://whackylabs.com/reactnative/ios/android/js/2024/01/15/hello-react-native-one-more-time/ |
 | swiftui               | ✅           | ✅             |                                                                                                |
