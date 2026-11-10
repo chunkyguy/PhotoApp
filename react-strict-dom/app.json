@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "PhotoApp",
+    "slug": "photo-app-react-strict-dom",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.whackylabs.photoapp.rsd"
+    },
+    "android": {
+      "package": "com.whackylabs.photoapp.rsd"
+    },
+    "plugins": ["expo-status-bar"]
+  }
+}
