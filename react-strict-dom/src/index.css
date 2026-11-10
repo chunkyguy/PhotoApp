@@ -1,0 +1,20 @@
+/* Replaced by the React Strict DOM PostCSS plugin with the generated styles */
+@react-strict-dom;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #fff;
+}
+
+/* Make the root behave like a native screen: a full-height flex column */
+#root {
+  display: flex;
+  flex-direction: column;
+}

@@ -17,6 +17,7 @@ The goal of the project is to get first hand experience with building the same m
 | native-script         | ✅           | ✅             | https://whackylabs.com/js/nativescript/appdev/2025/09/08/hello-nativescript/                   |
 | react                 | ✅           | ✅             | https://whackylabs.com/kotlin/compose/navigation/2024/08/16/jetpack-compose-navigation/        |
 | react-native          | ✅           | ✅             | https://whackylabs.com/reactnative/ios/android/js/2024/01/15/hello-react-native-one-more-time/ |
+| react-strict-dom      | ✅           | ✅             |                                                                                                |
 | swiftui               | ✅           | ✅             |                                                                                                |
 | uikit-objc            | ✅           | ✅             |                                                                                                |
 | uikit-objc-arc        | ✅           | ✅             |                                                                                                |
