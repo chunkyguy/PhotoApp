@@ -1,0 +1,8 @@
+/* Replaced by the React Strict DOM PostCSS plugin with the generated styles */
+@react-strict-dom;
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f4f4f5;
+}
