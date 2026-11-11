@@ -1,0 +1,31 @@
+{
+  "name": "photoapp",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "rspeedy build",
+    "dev": "rspeedy dev",
+    "preview": "rspeedy preview",
+    "test": "rstest run"
+  },
+  "dependencies": {
+    "@lynx-js/react": "^0.126.2"
+  },
+  "devDependencies": {
+    "@lynx-js/preact-devtools": "^5.0.1-20260827072047-5f77e12",
+    "@lynx-js/qrcode-rsbuild-plugin": "^0.7.3",
+    "@lynx-js/react-rsbuild-plugin": "^0.20.3",
+    "@lynx-js/rspeedy": "^0.18.0",
+    "@lynx-js/types": "^4.1.0",
+    "@rsbuild/plugin-type-check": "^1.6.0",
+    "@rstest/core": "^0.12.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@types/react": "^19.2.18",
+    "jsdom": "^27.4.0",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
