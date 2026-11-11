@@ -1,6 +1,6 @@
 import { useGlobalProps } from "@lynx-js/react";
 
-export interface Insets {
+interface Insets {
   top: number;
   bottom: number;
   left: number;

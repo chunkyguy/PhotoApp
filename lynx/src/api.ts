@@ -15,8 +15,6 @@ export interface Photo {
   author: string;
   width: number;
   height: number;
-  url: string;
-  download_url: string;
 }
 
 const TIMEOUT_MS = 15000;
@@ -42,19 +40,13 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
   });
 }
 
-export async function fetchPhotos({ page = 1, limit = 30 } = {}): Promise<
-  Photo[]
-> {
-  const url = `${BASE_URL}/v2/list?page=${page}&limit=${limit}`;
-  console.info("[api] fetching", url);
+export async function fetchPhotos(): Promise<Photo[]> {
+  const url = `${BASE_URL}/v2/list?page=1&limit=30`;
   const response = await withTimeout(fetch(url), TIMEOUT_MS);
-  console.info("[api] response status", response.status);
   if (response.status < 200 || response.status >= 300) {
     throw new Error(`Request failed (${response.status})`);
   }
-  const photos = (await withTimeout(response.json(), TIMEOUT_MS)) as Photo[];
-  console.info("[api] received", photos.length, "photos");
-  return photos;
+  return (await withTimeout(response.json(), TIMEOUT_MS)) as Photo[];
 }
 
 export function photoUrl(id: string, width: number, height = width): string {
