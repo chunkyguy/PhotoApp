@@ -7,9 +7,12 @@ import { expect, test } from '@rstest/core';
 
 import { App } from '../App';
 
-test('App', async () => {
+test('App shows a spinner while photos load', async () => {
+  // Never resolve, so the app stays in its loading state and makes no network call.
+  globalThis.fetch = () => new Promise<Response>(() => {});
+
   const { findByText } = render(<App />);
-  const element = await findByText('Tap the logo and have fun!');
+  const element = await findByText('Loading photos…');
 
   expect(element).toBeInTheDocument();
 });

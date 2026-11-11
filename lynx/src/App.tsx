@@ -1,54 +1,95 @@
-import { useCallback, useEffect, useState } from '@lynx-js/react';
+import { useEffect, useState } from "@lynx-js/react";
 
-import './App.css';
-import arrow from './assets/arrow.png';
-import lynxLogo from './assets/lynx-logo.png';
-import reactLynxLogo from './assets/react-logo.png';
-import { useFlappy } from './useFlappy.js';
+import "./App.css";
+import { fetchPhotos, photoUrl, type Photo } from "./api.js";
+import { Details } from "./Details.js";
+import { useSafeArea } from "./safeArea.js";
 
 export function App() {
-  const [alterLogo, setAlterLogo] = useState(false);
-  const [logoY, jump] = useFlappy();
+  const [photos, setPhotos] = useState<Photo[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  // Bumping this re-runs the fetch effect.
+  const [attempt, setAttempt] = useState(0);
+  const [selected, setSelected] = useState<Photo | null>(null);
+  const insets = useSafeArea();
 
+  // useEffect runs on the background thread, where fetch is available.
   useEffect(() => {
-    console.info('Hello, ReactLynx');
-  }, []);
+    let cancelled = false;
+    fetchPhotos()
+      .then((result) => {
+        if (!cancelled) setPhotos(result);
+      })
+      .catch((e: unknown) => {
+        console.error("[App] failed to load photos", e);
+        if (!cancelled) setError(e instanceof Error ? e.message : String(e));
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [attempt]);
 
-  const onTap = useCallback(() => {
-    'background only';
-    setAlterLogo((prevAlterLogo) => !prevAlterLogo);
-  }, []);
+  const retry = () => {
+    setError(null);
+    setPhotos(null);
+    setAttempt((n) => n + 1);
+  };
 
-  return (
-    <view bindtap={jump}>
-      <view className="Background" />
-      <view className="App">
-        <view className="Banner">
-          <view
-            className="Logo"
-            style={{ transform: `translateY(${logoY}px)` }}
-            bindtap={onTap}
-          >
-            {alterLogo ? (
-              <image src={reactLynxLogo} className="Logo--react" />
-            ) : (
-              <image src={lynxLogo} className="Logo--lynx" />
-            )}
-          </view>
-          <text className="Title">React</text>
-          <text className="Subtitle">on Lynx</text>
+  if (error != null) {
+    return (
+      <view className="Center">
+        <text className="ErrorTitle">Couldn't load photos</text>
+        <text className="Message">{error}</text>
+        <view className="Button" bindtap={retry}>
+          <text className="ButtonText">Retry</text>
         </view>
-        <view className="Content">
-          <image src={arrow} className="Arrow" />
-          <text className="Description">Tap the logo and have fun!</text>
-          <text className="Hint">
-            Edit
-            <text className="Hint-file">{' src/App.tsx '}</text>
-            to see updates!
-          </text>
-        </view>
-        <view className="Spacer" />
       </view>
+    );
+  }
+
+  if (photos == null) {
+    return (
+      <view className="Center">
+        <view className="Spinner" />
+        <text className="Message">Loading photos…</text>
+      </view>
+    );
+  }
+
+  // Keep the grid mounted under the details view so its scroll position survives.
+  return (
+    <view
+      className="Screen"
+      style={{
+        paddingTop: `${insets.top}px`,
+        paddingLeft: `${insets.left}px`,
+        paddingRight: `${insets.right}px`,
+      }}
+    >
+      <list
+        className="Grid"
+        style={{ paddingBottom: `${insets.bottom}px` }}
+        list-type="flow"
+        span-count={2}
+      >
+        {photos.map((photo) => (
+          <list-item
+            item-key={`photo-${photo.id}`}
+            key={`photo-${photo.id}`}
+            className="Cell"
+            bindtap={() => setSelected(photo)}
+          >
+            <image
+              className="Photo"
+              src={photoUrl(photo.id, 400)}
+              mode="aspectFill"
+            />
+          </list-item>
+        ))}
+      </list>
+      {selected != null && (
+        <Details photo={selected} onBack={() => setSelected(null)} />
+      )}
     </view>
   );
 }
